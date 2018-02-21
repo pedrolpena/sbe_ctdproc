@@ -1,23 +1,28 @@
 @echo off
 SETLOCAL
+SET _EXITSTATUS=0
+SET _ARGNUM=0
 SET BASE_DIR=%ALLUSERSPROFILE%\Documents
 
-REM 
-REM #if [ "$#" -eq 0  ]; then
-REM #    echo "ERROR"
-REM #    echo "This script takes up to two parameters, CRUISE ID and an optional Install path."
-REM #    echo "eg. init_ctd_proc AB1705 /home/user/data". 
-REM #    echo "If the path is omitted then everything will be placed in "$BASE_DIR"/ctd_proc"
-REM #    exit 1
-REM #exit 1
-REM #
-REM #fi
-REM #
-REM #if [ "$#" -eq 2  ]; then
-REM #
-REM #    BASE_DIR="$2"
-REM #
-REM #fi
+FOR %%i IN (%*) DO SET /A _ARGNUM+=1
+
+IF %_ARGNUM% LSS 1 (
+    
+    SET _EXITSTATUS=1    
+    GOTO:_SHOWUSAGE
+
+)
+
+IF %_ARGNUM% GTR 2 (
+
+  call :_SHOWUSAGE %0%, "Bad human...bad args."
+  set _EXITSTATUS=1
+  GOTO:_EOF
+)
+
+IF %_ARGNUM% EQU 2 (
+    SET BASE_DIR=%2
+)
 
 
 
@@ -2500,4 +2505,21 @@ echo REM the changes in the sbe_batch file.>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo %%SBE_DIR%%\SBEBatch.exe %%BATCH_FILE%% %%RAW_DIR%% %%BASENAME%% %%PROCDATA_1DB_DIR%% %%PROCDATA_1HZ_DIR%% %%PSA_1DB%% %%PSA_1HZ%% %%BOTTLE_DIR%%>> %SBEBATCH_DIR%\process_ctd.bat
 echo ENDLOCAL>> %SBEBATCH_DIR%\process_ctd.bat
+
 ENDLOCAL
+
+
+GOTO:_EOF
+
+:_SHOWUSAGE
+
+    echo ERROR
+    echo This script takes up to two parameters, CRUISE ID and an optional Install path.
+    echo eg. init_ctd_proc AB1705 C:\users\Public\Documents.
+    echo If the path is omitted then everything will be placed in %BASE_DIR%\ctd_proc
+
+    GOTO:EOF
+
+:_EOF
+ 
+CMD /C EXIT %_EXITSTATUS%
