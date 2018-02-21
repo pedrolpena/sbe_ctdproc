@@ -30,7 +30,7 @@ CRUISE_ID="$1"
 ########################################################################
 # Path to the Sea Bird executables that will run with wine.            #
 #                                                                      #
-SBE_DIR=$HOME/".wine/drive_c/Program Files/Sea-Bird\
+SBE_DIR=$HOME/".wine/drive_c/Program Files (x86)/Sea-Bird\
 /SBEDataProcessing-Win32/"
 #                                                                      #
 ########################################################################
@@ -2368,8 +2368,7 @@ echo '#                                                                      #' 
 echo '########################################################################' >> "$SBEBATCH_DIR"/config.cfg
 echo '# Path to the Sea Bird executables that will run with wine.            #' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
-echo 'SBE_DIR=$HOME/".wine/drive_c/Program Files/Sea-Bird\' >> "$SBEBATCH_DIR"/config.cfg
-echo '/SBEDataProcessing-Win32/"' >> "$SBEBATCH_DIR"/config.cfg
+echo 'SBE_DIR=$HOME/"'$SBE_DIR'"' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
 echo '########################################################################' >> "$SBEBATCH_DIR"/config.cfg
 echo '# Base directory that holds the CTD processing files                   #' >> "$SBEBATCH_DIR"/config.cfg
@@ -2425,9 +2424,6 @@ echo 'BATCH_FILE="$SBEBATCH_DIR/sbe_batch.dat"' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
 echo '########################################################################' >> "$SBEBATCH_DIR"/config.cfg
 
-
-
-
 #######################process_ctd#####################################
 echo '#!/bin/bash' > "$SBEBATCH_DIR"/process_ctd
 echo '# Edit this file to setup ctd processing using wine.' >> "$SBEBATCH_DIR"/process_ctd
@@ -2435,6 +2431,34 @@ echo '' >> "$SBEBATCH_DIR"/process_ctd
 echo '# This line brings in the variable values' >> "$SBEBATCH_DIR"/process_ctd
 echo 'source config.cfg' >> "$SBEBATCH_DIR"/process_ctd
 echo '' >> "$SBEBATCH_DIR"/process_ctd
+
+echo 'echo "Checking for SBEBatch.exe in $SBE_DIR"' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo """"' >> "$SBEBATCH_DIR"/process_ctd
+
+echo 'if [ ! -f "$SBE_DIR/SBEBatch.exe" ]; then' >> "$SBEBATCH_DIR"/process_ctd
+echo '    echo ""' >> "$SBEBATCH_DIR"/process_ctd
+echo '    echo "SBEBatch.exe not found!"' >> "$SBEBATCH_DIR"/process_ctd
+echo '    SBE_DIR="'$HOME'/.wine/drive_c/Program Files/Sea-Bird/SBEDataProcessing-Win32"' >> "$SBEBATCH_DIR"/process_ctd
+echo 'else' >> "$SBEBATCH_DIR"/process_ctd
+echo '    echo ""' >> "$SBEBATCH_DIR"/process_ctd
+echo '    echo "Found SBEBatch.exe!"'  >> "$SBEBATCH_DIR"/process_ctd     
+echo 'fi' >> "$SBEBATCH_DIR"/process_ctd
+echo '' >> "$SBEBATCH_DIR"/process_ctd
+echo '' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "Checking for SBEBatch.exe in $SBE_DIR"' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo """"' >> "$SBEBATCH_DIR"/process_ctd
+echo 'if [ ! -f "$SBE_DIR/SBEBatch.exe" ]; then' >> "$SBEBATCH_DIR"/process_ctd
+echo '    echo ""' >> "$SBEBATCH_DIR"/process_ctd
+echo '    echo "The SeaBird processing software doesn''t seem to be installed."' >> "$SBEBATCH_DIR"/process_ctd
+echo '    echo "please install it in the default location and try again."' >> "$SBEBATCH_DIR"/process_ctd
+echo '    exit 1' >> "$SBEBATCH_DIR"/process_ctd
+echo 'else' >> "$SBEBATCH_DIR"/process_ctd
+echo '    echo ""' >> "$SBEBATCH_DIR"/process_ctd
+echo '   echo "Found SBEBatch.exe!"' >> "$SBEBATCH_DIR"/process_ctd        
+echo 'fi' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo ""'
+
+
 echo '########################################################################' >> "$SBEBATCH_DIR"/process_ctd
 echo '# The basename that will be used to assemble the filenames needed.     #' >> "$SBEBATCH_DIR"/process_ctd
 echo '# This corresponds to %2 in the sbe_batch.dat script.                  #' >> "$SBEBATCH_DIR"/process_ctd
@@ -2449,10 +2473,10 @@ echo 'echo "@ %4 Path where the processed 1hz files will be placed." >> $BATCH_F
 echo 'echo "@ %5 Path to the 1db psa files." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
 echo 'echo "@ %6 Path to the 1hz psa files." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
 echo 'echo "@ %7 Path where the bottle files will be placed." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
-echo 'echo. >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
-echo 'echo. >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
 echo 'echo "@DatCNVW AlignCTDW WildEditW FilterW CellTMW LoopEditW RosSumW DeriveW BinAvgW StripW TransW SplitW" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
-echo 'echo. >>$BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "" >>$BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
 echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
 echo 'echo "@ 1DB PROCESSING @" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
 echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd

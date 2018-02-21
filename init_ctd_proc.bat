@@ -2540,6 +2540,7 @@ echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo %%SBE_DIR%%\SBEBatch.exe %%BATCH_FILE%% %%RAW_DIR%% %%BASENAME%% %%PROCDATA_1DB_DIR%% %%PROCDATA_1HZ_DIR%% %%PSA_1DB%% %%PSA_1HZ%% %%BOTTLE_DIR%%>> %SBEBATCH_DIR%\process_ctd.bat
 echo ENDLOCAL>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo @echo off>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo :_EOF>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
@@ -2548,7 +2549,7 @@ echo.>> %SBEBATCH_DIR%\process_ctd.bat
 copy init_ctd_proc.bat %SBEBATCH_DIR%
 ENDLOCAL
 
-
+@echo off
 GOTO:_EOF
 
 :_SHOWUSAGE
@@ -2561,5 +2562,5 @@ GOTO:_EOF
     GOTO:EOF
 
 :_EOF
- 
+ @echo off
 CMD /C EXIT %_EXITSTATUS%
