@@ -2,6 +2,26 @@
 A set of scripts to setup directories and scripts to do some basic CTD processing under Windows or *nix systems using wine.
 This has successfully been tested on Windows linux and OSX.
 
+Contents
+========
+Included are two scripts to initialize a ctd processing environment and a folder with<br>
+raw data files for station 004 of a Western Boundry Time Series(WBTS) cruise<br>
+carried out in May of 2017.<br>
+
+-init_ctd_proc       A BASH script.<br>
+-init_ctd_proc.bat   A BATCH script<br>
+
+
+raw_data<br>
+
+-ab1705_004.bl         Bottle trip file<br>
+-ab1705_004.hdr        Header file<br>
+-ab1705_004.hex        Raw hex data file<br>
+-ab1705_004.mrk        Markscan file<br>
+-AB1705_004.XMLCON     Configuration file<br>
+
+
+
 Requirements
 ============
 
