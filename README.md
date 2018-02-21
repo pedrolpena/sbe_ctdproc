@@ -37,12 +37,12 @@ to process station 004 type<br>
 The SBEBatch should run and deposit the processed files in<br>
    
 $HOME/data/ctd_proc/1db/proc_data<br>
--AB1705_004.cnv<br                  />
--AB1705_004.ros<br                  />
--dAB1705_004.cnv<br                 />
--uAB1705_004.cnv<br                 />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.ros<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-dAB1705_004.cnv<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-uAB1705_004.cnv<br>
    
 $HOME/data/ctd_proc/1hz/proc_data<br>
--AB1705_004.cnv<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
   
 
