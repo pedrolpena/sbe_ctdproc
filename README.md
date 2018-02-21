@@ -32,4 +32,15 @@ In this example we'll prepare an environment to process CTD station 004 from cru
    to process station 004 type<br>
    ./process_ctd 004<br>
    
+   The SBEBatch should run and deposit the processed files in<br>
+   
+   $HOME/data/ctd_proc/1db/proc_data<br>
+                                      -AB1705_004.cnv<br>
+                                      -AB1705_004.ros<br>
+                                      -dAB1705_004.cnv<br>
+                                      -uAB1705_004.cnv<br>
+   
+   $HOME/data/ctd_proc/1hz/proc_data<br>
+                                      -AB1705_004.cnv<br>
+  
 
