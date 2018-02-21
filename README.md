@@ -1,5 +1,5 @@
 # sbe_ctdproc
-A bash script to setup directories and scripts to do some basic CTD processing under Windows or *nix systems using wine.
+A set of scripts to setup directories and scripts to do some basic CTD processing under Windows or *nix systems using wine.
 This has successfully been tested on Windows linux and OSX.
 
 Requirements
@@ -29,4 +29,7 @@ In this example we'll prepare an environment to process CTD station 004 from cru
    This will install the processing script with it's configuration file and PSA files.<br>
    Copy the included raw data files to $HOME/data/ctd_proc/raw_data and navigate to <br>
    $HOME/data/ctd_proc/batch_files using the terminal.<br>
+   to process station 004 type<br>
+   ./process_ctd 004<br>
+   
 
