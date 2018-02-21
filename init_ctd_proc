@@ -2428,79 +2428,79 @@ echo '########################################################################' 
 
 
 
-#######################process_cast#####################################
-echo '#!/bin/bash' > "$SBEBATCH_DIR"/process_cast
-echo '# Edit this file to setup ctd processing using wine.' >> "$SBEBATCH_DIR"/process_cast
-echo '' >> "$SBEBATCH_DIR"/process_cast
-echo '# This line brings in the variable values' >> "$SBEBATCH_DIR"/process_cast
-echo 'source config.cfg' >> "$SBEBATCH_DIR"/process_cast
-echo '' >> "$SBEBATCH_DIR"/process_cast
-echo '########################################################################' >> "$SBEBATCH_DIR"/process_cast
-echo '# The basename that will be used to assemble the filenames needed.     #' >> "$SBEBATCH_DIR"/process_cast
-echo '# This corresponds to %2 in the sbe_batch.dat script.                  #' >> "$SBEBATCH_DIR"/process_cast
-echo '#                                                                      #' >> "$SBEBATCH_DIR"/process_cast
-echo 'BASENAME="$CRUISE_ID"_"$1"' >> "$SBEBATCH_DIR"/process_cast
-echo '########################################################################' >> "$SBEBATCH_DIR"/process_cast
-echo '' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@ %1 Path to the raw data files." > $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@ %2 Basename used to create the filenames." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@ %3 Path where the processed 1db files will be placed." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@ %4 Path where the processed 1hz files will be placed." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@ %5 Path to the 1db psa files." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@ %6 Path to the 1hz psa files." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@ %7 Path where the bottle files will be placed." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@DatCNVW AlignCTDW WildEditW FilterW CellTMW LoopEditW RosSumW DeriveW BinAvgW StripW TransW SplitW" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "" >>$BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@ 1DB PROCESSING @" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "datcnv      /i%1/%2.hex   /p%5/DatCnv.psa      /f%2.cnv /o%3    /c%1/%2.xmlcon" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@markscan   /i%1/%2.mrk   /p%5/MarkScan.psa    /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "alignctd    /i%3/%2.cnv   /p%5/AlignCTD.psa    /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "wildedit    /i%3/%2.cnv   /p%5/WildEdit.psa    /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "filter      /i%3/%2.cnv   /p%5/Filter.psa      /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "loopedit    /i%3/%2.cnv   /p%5/LoopEdit.psa    /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "celltm      /i%3/%2.cnv   /p%5/CellTM.psa      /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "rossum      /i%3/%2.ros   /p%5/BottleSum.psa   /f%2.btl /o%7    /c%1/%2.xmlcon" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "derive      /i%3/%2.cnv   /p%5/Derive.psa      /f%2.cnv /o%3    /c%1/%2.xmlcon" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "binavg      /i%3/%2.cnv   /p%5/BinAvg.psa      /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "trans       /i%3/%2.cnv   /p%5/Trans.psa       /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "split       /i%3/%2.cnv   /p%5/Split.psa       /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@ 1HZ PROCESSING @" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "@DatCNVW AlignCTDW WildEditW FilterW CellTMW BinAvgW StripW TransW" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "datcnv      /i%1/%2.hex   /p%6/DatCnv.psa      /f%2.cnv /o%4    /c%1/%2.xmlcon" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "alignctd    /i%4/%2.cnv   /p%6/AlignCTD.psa    /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "wildedit    /i%4/%2.cnv   /p%6/WildEdit.psa    /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "filter      /i%4/%2.cnv   /p%6/Filter.psa      /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "celltm      /i%4/%2.cnv   /p%6/CellTM.psa      /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "binavg      /i%4/%2.cnv   /p%6/BinAvg.psa      /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo 'echo "trans       /i%4/%2.cnv   /p%6/Trans.psa       /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_cast
-echo '' >> "$SBEBATCH_DIR"/process_cast
-echo '' >> "$SBEBATCH_DIR"/process_cast
-echo '# wine is used to run the SBEBatch.exe program that will do the ' >> "$SBEBATCH_DIR"/process_cast
-echo '# processing. Seven arguments are passed to the sbe_batch.dat script.' >> "$SBEBATCH_DIR"/process_cast
-echo '# this order is important. If the order is changed, make sure to make' >> "$SBEBATCH_DIR"/process_cast
-echo '# the changes in the sbe_batch file.' >> "$SBEBATCH_DIR"/process_cast
-echo ''  >> "$SBEBATCH_DIR"/process_cast
-echo 'wine "$SBE_DIR"/SBEBatch.exe \' >> "$SBEBATCH_DIR"/process_cast
-echo '     "$BATCH_FILE" \' >> "$SBEBATCH_DIR"/process_cast
-echo '      "$RAW_DIR" \' >> "$SBEBATCH_DIR"/process_cast
-echo '      "$BASENAME" \' >> "$SBEBATCH_DIR"/process_cast
-echo '      "$PROCDATA_1DB_DIR" \' >> "$SBEBATCH_DIR"/process_cast
-echo '      "$PROCDATA_1HZ_DIR" \' >> "$SBEBATCH_DIR"/process_cast
-echo '      "$PSA_1DB"  \' >> "$SBEBATCH_DIR"/process_cast
-echo '      "$PSA_1HZ" \' >> "$SBEBATCH_DIR"/process_cast
-echo '      "$BOTTLE_DIR"' >> "$SBEBATCH_DIR"/process_cast
+#######################process_ctd#####################################
+echo '#!/bin/bash' > "$SBEBATCH_DIR"/process_ctd
+echo '# Edit this file to setup ctd processing using wine.' >> "$SBEBATCH_DIR"/process_ctd
+echo '' >> "$SBEBATCH_DIR"/process_ctd
+echo '# This line brings in the variable values' >> "$SBEBATCH_DIR"/process_ctd
+echo 'source config.cfg' >> "$SBEBATCH_DIR"/process_ctd
+echo '' >> "$SBEBATCH_DIR"/process_ctd
+echo '########################################################################' >> "$SBEBATCH_DIR"/process_ctd
+echo '# The basename that will be used to assemble the filenames needed.     #' >> "$SBEBATCH_DIR"/process_ctd
+echo '# This corresponds to %2 in the sbe_batch.dat script.                  #' >> "$SBEBATCH_DIR"/process_ctd
+echo '#                                                                      #' >> "$SBEBATCH_DIR"/process_ctd
+echo 'BASENAME="$CRUISE_ID"_"$1"' >> "$SBEBATCH_DIR"/process_ctd
+echo '########################################################################' >> "$SBEBATCH_DIR"/process_ctd
+echo '' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@ %1 Path to the raw data files." > $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@ %2 Basename used to create the filenames." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@ %3 Path where the processed 1db files will be placed." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@ %4 Path where the processed 1hz files will be placed." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@ %5 Path to the 1db psa files." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@ %6 Path to the 1hz psa files." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@ %7 Path where the bottle files will be placed." >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo. >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo. >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@DatCNVW AlignCTDW WildEditW FilterW CellTMW LoopEditW RosSumW DeriveW BinAvgW StripW TransW SplitW" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo. >>$BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@ 1DB PROCESSING @" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "datcnv      /i%1/%2.hex   /p%5/DatCnv.psa      /f%2.cnv /o%3    /c%1/%2.xmlcon" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@markscan   /i%1/%2.mrk   /p%5/MarkScan.psa    /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "alignctd    /i%3/%2.cnv   /p%5/AlignCTD.psa    /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "wildedit    /i%3/%2.cnv   /p%5/WildEdit.psa    /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "filter      /i%3/%2.cnv   /p%5/Filter.psa      /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "loopedit    /i%3/%2.cnv   /p%5/LoopEdit.psa    /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "celltm      /i%3/%2.cnv   /p%5/CellTM.psa      /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "rossum      /i%3/%2.ros   /p%5/BottleSum.psa   /f%2.btl /o%7    /c%1/%2.xmlcon" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "derive      /i%3/%2.cnv   /p%5/Derive.psa      /f%2.cnv /o%3    /c%1/%2.xmlcon" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "binavg      /i%3/%2.cnv   /p%5/BinAvg.psa      /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "trans       /i%3/%2.cnv   /p%5/Trans.psa       /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "split       /i%3/%2.cnv   /p%5/Split.psa       /f%2.cnv /o%3" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@ 1HZ PROCESSING @" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "@DatCNVW AlignCTDW WildEditW FilterW CellTMW BinAvgW StripW TransW" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "datcnv      /i%1/%2.hex   /p%6/DatCnv.psa      /f%2.cnv /o%4    /c%1/%2.xmlcon" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "alignctd    /i%4/%2.cnv   /p%6/AlignCTD.psa    /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "wildedit    /i%4/%2.cnv   /p%6/WildEdit.psa    /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "filter      /i%4/%2.cnv   /p%6/Filter.psa      /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "celltm      /i%4/%2.cnv   /p%6/CellTM.psa      /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "binavg      /i%4/%2.cnv   /p%6/BinAvg.psa      /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo 'echo "trans       /i%4/%2.cnv   /p%6/Trans.psa       /f%2.cnv /o%4" >> $BATCH_FILE' >> "$SBEBATCH_DIR"/process_ctd
+echo '' >> "$SBEBATCH_DIR"/process_ctd
+echo '' >> "$SBEBATCH_DIR"/process_ctd
+echo '# wine is used to run the SBEBatch.exe program that will do the ' >> "$SBEBATCH_DIR"/process_ctd
+echo '# processing. Seven arguments are passed to the sbe_batch.dat script.' >> "$SBEBATCH_DIR"/process_ctd
+echo '# this order is important. If the order is changed, make sure to make' >> "$SBEBATCH_DIR"/process_ctd
+echo '# the changes in the sbe_batch file.' >> "$SBEBATCH_DIR"/process_ctd
+echo ''  >> "$SBEBATCH_DIR"/process_ctd
+echo 'wine "$SBE_DIR"/SBEBatch.exe \' >> "$SBEBATCH_DIR"/process_ctd
+echo '     "$BATCH_FILE" \' >> "$SBEBATCH_DIR"/process_ctd
+echo '      "$RAW_DIR" \' >> "$SBEBATCH_DIR"/process_ctd
+echo '      "$BASENAME" \' >> "$SBEBATCH_DIR"/process_ctd
+echo '      "$PROCDATA_1DB_DIR" \' >> "$SBEBATCH_DIR"/process_ctd
+echo '      "$PROCDATA_1HZ_DIR" \' >> "$SBEBATCH_DIR"/process_ctd
+echo '      "$PSA_1DB"  \' >> "$SBEBATCH_DIR"/process_ctd
+echo '      "$PSA_1HZ" \' >> "$SBEBATCH_DIR"/process_ctd
+echo '      "$BOTTLE_DIR"' >> "$SBEBATCH_DIR"/process_ctd
 
-chmod +x "$SBEBATCH_DIR"/process_cast
+chmod +x "$SBEBATCH_DIR"/process_ctd
 cp init_ctd_proc "$SBEBATCH_DIR"
 
 
@@ -2511,9 +2511,9 @@ echo "This is now configured for basic CTD processing for cruise "$CRUISE_ID". M
 echo "installed and that the SeaBird processing software is installed and running."
 echo "This script assumes that wine is installed in he default prefix "$HOME/.wine
 echo "and that SBEBatch.exe is installed in "$HOME"/.wine/drive_c/Program Files/Sea-Bird/SBEDataProcessing-Win32"
-echo "If they arn't, modify config.cfg and process_cast with the correct paths."
+echo "If they arn't, modify config.cfg and process_ctd with the correct paths."
 echo ""
 echo "Place the raw CTD files in "$RAW_DIR
-echo "To process navigate to "$SBEBATCH_DIR" and type ./process_cast nnn"
+echo "To process navigate to "$SBEBATCH_DIR" and type ./process_ctd nnn"
 echo "where nnn is the station number to process."
 echo ""
