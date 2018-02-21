@@ -36,7 +36,7 @@ REM #                                                                      #
 REM ########################################################################
 REM # Path to the Sea Bird executables that will run with wine.            #
 REM #                                                                      #
-SET SBE_DIR="c:\Program Files\Sea-Bird\SBEDataProcessing-Win32"
+SET SBE_DIR="c:\Program Files (x86)\Sea-Bird\SBEDataProcessing-Win32"
 REM #                                                                      #
 REM ########################################################################
 REM # Base directory that holds the CTD processing files                   #
@@ -2433,17 +2433,54 @@ echo REM #                                                                      
 echo REM ########################################################################>> %SBEBATCH_DIR%\config.bat
 
 REM #######################process_ctd.bat#####################################
-echo SETLOCAL> %SBEBATCH_DIR%\process_ctd.bat
-echo @echo off>> %SBEBATCH_DIR%\process_ctd.bat
-echo CALL config.bat>> %SBEBATCH_DIR%\process_ctd.bat
+
+echo @echo off> %SBEBATCH_DIR%\process_ctd.bat
+echo SETLOCAL>> %SBEBATCH_DIR%\process_ctd.bat
+echo SET _EXITSTATUS=0>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo REM # Edit this file to setup ctd processing.>> %SBEBATCH_DIR%\process_ctd.bat
-echo. >> %SBEBATCH_DIR%\process_ctd.bat
 echo REM # This line brings in the variable values>> %SBEBATCH_DIR%\process_ctd.bat
-REM echo call config.bat>> %SBEBATCH_DIR%\process_ctd.bat
-echo. >> %SBEBATCH_DIR%\process_ctd.bat
+echo CALL config.bat>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo SET TEMP=Checking for SBEBatch.exe in %%SBE_DIR%%>> %SBEBATCH_DIR%\process_ctd.bat
+echo echo %%TEMP%%>> %SBEBATCH_DIR%\process_ctd.bat
+echo echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo IF NOT EXIST %%SBE_DIR%%\SBEBatch.exe (>> %SBEBATCH_DIR%\process_ctd.bat
+echo echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo     echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo     echo SBEBatch.exe not found!>> %SBEBATCH_DIR%\process_ctd.bat
+echo     SET SBE_DIR="c:\Program Files\Sea-Bird\SBEDataProcessing-Win32">> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat  
+echo ) ELSE (>> %SBEBATCH_DIR%\process_ctd.bat
+echo     echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo     echo Found SBEBatch.exe!>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo )>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo SET TEMP=Checking for SBEBatch.exe in %%SBE_DIR%%>> %SBEBATCH_DIR%\process_ctd.bat
+echo echo %%TEMP%%>> %SBEBATCH_DIR%\process_ctd.bat
+echo echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo IF NOT EXIST %%SBE_DIR%%\SBEBatch.exe (>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat  
+echo     echo The SeaBird processing software doesn't seem to be installed.>> %SBEBATCH_DIR%\process_ctd.bat
+echo     echo please install it in the default location and try again.>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat     
+echo     SET _EXITSTATUS=1>> %SBEBATCH_DIR%\process_ctd.bat
+echo     GOTO:_EOF>> %SBEBATCH_DIR%\process_ctd.bat
+echo ) ELSE (>> %SBEBATCH_DIR%\process_ctd.bat
+echo     echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo     echo Found SBEBatch.exe!>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo )>> %SBEBATCH_DIR%\process_ctd.bat
+echo.
+echo.
 echo REM ########################################################################>> %SBEBATCH_DIR%\process_ctd.bat
 echo REM # The basename that will be used to assemble the filenames needed.     #>> %SBEBATCH_DIR%\process_ctd.bat
-echo REM # This corresponds to %%2 in the sbe_batch.dat script.                  #>> %SBEBATCH_DIR%\process_ctd.bat
+echo REM # This corresponds to ^%%^%%^2 in the sbe_batch.dat script.                  #>> %SBEBATCH_DIR%\process_ctd.bat
 echo REM #                                                                      #>> %SBEBATCH_DIR%\process_ctd.bat
 echo SET BASENAME=%%CRUISE_ID%%_%%1>> %SBEBATCH_DIR%\process_ctd.bat
 echo REM #>> %SBEBATCH_DIR%\process_ctd.bat
@@ -2458,7 +2495,7 @@ echo echo @ ^%%^%%^6 Path to the 1hz psa files. ^>^> %%BATCH_FILE%%>> %SBEBATCH_
 echo echo @ ^%%^%%^7 Path where the bottle files will be placed. ^>^> %%BATCH_FILE%%>> %SBEBATCH_DIR%\process_ctd.bat
 echo echo. ^>^> %%BATCH_FILE%%>> %SBEBATCH_DIR%\process_ctd.bat
 echo echo. ^>^> %%BATCH_FILE%%>> %SBEBATCH_DIR%\process_ctd.bat
-echo. >> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo echo @DatCNVW AlignCTDW WildEditW FilterW CellTMW LoopEditW RosSumW DeriveW BinAvgW StripW TransW SplitW ^>^> %%BATCH_FILE%%>> %SBEBATCH_DIR%\process_ctd.bat
 echo echo. ^>^> %%BATCH_FILE%%>> %SBEBATCH_DIR%\process_ctd.bat
 echo echo @@@@@@@@@@@@@@@@@@ ^>^> %%BATCH_FILE%%>> %SBEBATCH_DIR%\process_ctd.bat
@@ -2493,19 +2530,22 @@ echo echo filter      /i^%%^%%^4/^%%^%%^2.cnv   /p^%%^%%^6/Filter.psa      /f^%%
 echo echo celltm      /i^%%^%%^4/^%%^%%^2.cnv   /p^%%^%%^6/CellTM.psa      /f^%%^%%^2.cnv /o^%%^%%^4 ^>^> %%BATCH_FILE%%>> %SBEBATCH_DIR%\process_ctd.bat
 echo echo binavg      /i^%%^%%^4/^%%^%%^2.cnv   /p^%%^%%^6/BinAvg.psa      /f^%%^%%^2.cnv /o^%%^%%^4 ^>^> %%BATCH_FILE%%>> %SBEBATCH_DIR%\process_ctd.bat
 echo echo trans       /i^%%^%%^4/^%%^%%^2.cnv   /p^%%^%%^6/Trans.psa       /f^%%^%%^2.cnv /o^%%^%%^4 ^>^> %%BATCH_FILE%%>> %SBEBATCH_DIR%\process_ctd.bat
-echo. >> %SBEBATCH_DIR%\process_ctd.bat
-echo. >> %SBEBATCH_DIR%\process_ctd.bat
 
-copy init_ctd_proc.bat %SBEBATCH_DIR%
 
-echo REM wine is used to run the SBEBatch.exe program that will do the >> %SBEBATCH_DIR%\process_ctd.bat
+echo REM wine is used to run the SBEBatch.exe program that will do the>> %SBEBATCH_DIR%\process_ctd.bat
 echo REM processing. Seven arguments are passed to the sbe_batch.dat script.>> %SBEBATCH_DIR%\process_ctd.bat
 echo REM this order is important. If the order is changed, make sure to make>> %SBEBATCH_DIR%\process_ctd.bat
 echo REM the changes in the sbe_batch file.>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo %%SBE_DIR%%\SBEBatch.exe %%BATCH_FILE%% %%RAW_DIR%% %%BASENAME%% %%PROCDATA_1DB_DIR%% %%PROCDATA_1HZ_DIR%% %%PSA_1DB%% %%PSA_1HZ%% %%BOTTLE_DIR%%>> %SBEBATCH_DIR%\process_ctd.bat
 echo ENDLOCAL>> %SBEBATCH_DIR%\process_ctd.bat
-
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo :_EOF>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+echo CMD /C EXIT %_EXITSTATUS%>> %SBEBATCH_DIR%\process_ctd.bat
+echo.>> %SBEBATCH_DIR%\process_ctd.bat
+copy init_ctd_proc.bat %SBEBATCH_DIR%
 ENDLOCAL
 
 
