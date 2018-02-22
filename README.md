@@ -69,20 +69,20 @@ chmod +x ./init_ctd_proc<br>
 This will install the processing script with it's configuration file and PSA files.<br>
 Copy the included raw data files to $HOME/data/ctd_proc/raw_data and navigate to <br>
    
-$HOME/data/ctd_proc/batch_files using the terminal.<br>
+$HOME/ctd_proc/batch_files using the terminal.<br>
    
 to process station 004 type<br>
 ./process_ctd 004<br>
    
 The SBEBatch should run and deposit the processed files in<br>
    
-$HOME/data/ctd_proc/1db/proc_data<br>
+$HOME/ctd_proc/1db/proc_data<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.ros<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-dAB1705_004.cnv<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-uAB1705_004.cnv<br>
    
-$HOME/data/ctd_proc/1hz/proc_data<br>
+$HOME/ctd_proc/1hz/proc_data<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
   
 On Windows<br>
@@ -97,20 +97,20 @@ init_ctd_proc AB1705 c:\users\Public\Documents\data
 This will install the processing script with it's configuration file and PSA files.<br>
 Copy the included raw data files to c:\users\Public\Documents\data\ctd_proc\raw_data and navigate to <br>
 
-c:\users\Public\Documents\data\ctd_proc\batch_files using the terminal.<br>
+c:\users\Public\Documents\ctd_proc\batch_files using the terminal.<br>
    
 to process station 004 type<br>
 process_ctd 004<br>
 
 The SBEBatch should run and deposit the processed files in<br>
    
-c:\users\Public\Documents\data\ctd_proc\1db\proc_data<br>
+c:\users\Public\Documents\ctd_proc\1db\proc_data<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.ros<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-dAB1705_004.cnv<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-uAB1705_004.cnv<br>
    
-c:\users\Public\Documents\data\ctd_proc\1hz\proc_data<br>
+c:\users\Public\Documents\ctd_proc\1hz\proc_data<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
 
 
