@@ -2,7 +2,7 @@
 SETLOCAL
 SET _EXITSTATUS=0
 SET _ARGNUM=0
-SET BASE_DIR=%ALLUSERSPROFILE%\Documents
+SET BASE_DIR=c:\users\Public\Documents
 
 FOR %%i IN (%*) DO SET /A _ARGNUM+=1
 
