@@ -92,7 +92,7 @@ You should see two files.<br>
 -init_ctd_proc<br>
 -init_ctd_proc.bat<br>
 
-init_ctd_proc AB1705 %ALLUSERSPROFILE%\Documents\data
+init_ctd_proc AB1705 c:\users\Public\Documents\data
 
 This will install the processing script with it's configuration file and PSA files.<br>
 Copy the included raw data files to %ALLUSERSPROFILE%\Documents\data\ctd_proc\raw_data and navigate to <br>
@@ -104,13 +104,13 @@ process_ctd 004<br>
 
 The SBEBatch should run and deposit the processed files in<br>
    
-%ALLUSERSPROFILE%\Documents\data\ctd_proc\1db\proc_data<br>
+c:\users\Public\Documents\data\ctd_proc\1db\proc_data<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.ros<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-dAB1705_004.cnv<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-uAB1705_004.cnv<br>
    
-%ALLUSERSPROFILE%\Documents\data\ctd_proc\1hz\proc_data<br>
+c:\users\Public\Documents\data\ctd_proc\1hz\proc_data<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
 
 
