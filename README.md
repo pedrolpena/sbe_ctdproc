@@ -95,9 +95,9 @@ You should see two files.<br>
 init_ctd_proc AB1705 c:\users\Public\Documents\data
 
 This will install the processing script with it's configuration file and PSA files.<br>
-Copy the included raw data files to %ALLUSERSPROFILE%\Documents\data\ctd_proc\raw_data and navigate to <br>
+Copy the included raw data files to c:\users\Public\Documents\data\ctd_proc\raw_data and navigate to <br>
 
-%ALLUSERSPROFILE%\Documents\data\ctd_proc\batch_files using the terminal.<br>
+c:\users\Public\Documents\data\ctd_proc\batch_files using the terminal.<br>
    
 to process station 004 type<br>
 process_ctd 004<br>
