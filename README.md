@@ -27,6 +27,7 @@ Requirements
 
 The SeaBird processing software installed in one of the default locations.<br>
 
+
 If using wine.<br>
 $HOME/.wine/drive_c/Program Files (x86)/Sea-Bird<br>
 $HOME/user/.wine/drive_c/Program Files/Sea-Bird<br>
@@ -34,6 +35,22 @@ $HOME/user/.wine/drive_c/Program Files/Sea-Bird<br>
 If using Windows<br>
 C:\Program Files (x86)\Sea-Bird<br>
 C:\Program Files\Sea-Bird<br>
+
+These scripts were written to process files that were created with the version of SeaSave that creates<br>
+configuration files with the XMLCON extension. I think SeaBird Began using the XMLCON file with version 7.<br>
+The scripts also require that the raw data files be created with the following file naming convention.<br>
+
+CRUISE_ID_nnn<br>
+
+CRUISE_ID is the cruise designation and nnn is the three digit station number. The two must be seperated by an underscore.<br> 
+
+Obviously all this can be modified to suite your needs, so please do so.<br>
+You can  modify the actual initilization script so that all cruises you initialize have your modified parameters or you<r>
+can modify the config and process_ctd files after initializing a cruise.<br>
+   
+
+
+
 
 Example
 =======
