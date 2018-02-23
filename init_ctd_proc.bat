@@ -15,7 +15,7 @@ IF %_ARGNUM% LSS 1 (
 
 IF %_ARGNUM% GTR 2 (
 
-  call :_SHOWUSAGE %0%, "Bad human...bad args."
+  call :_SHOWUSAGE %0%
   set _EXITSTATUS=1
   GOTO:_EOF
 )
