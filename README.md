@@ -156,8 +156,8 @@ chmod +x psa_1hz_2nix<br>
 Run the scripts<br>
 
 ```bash
-./psa_1db_2nix path_2_1db_PSA_Files<br>
-./psa_1db_2nix path_2_1hz_PSA_Files<br>
+./psa_1db_2nix path_2_1db_PSA_Files
+./psa_1db_2nix path_2_1hz_PSA_Files
 ```
 Four files will be generated.<br>
 
