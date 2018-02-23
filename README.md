@@ -163,10 +163,113 @@ Now you can run the init_ctd_proc scripts with the new PSA files.<br>
 
 
 
+Additional Notes
+================
+
+You'll notice that there isn't a and SBE batch file doesn't exist before you process a cast for the first time.<br>
+This is because the process_ctd scripts generate "sbe_batch.dat" when run.<br> 
+A new file is generated every time so any changes made to the file will be destroyed on the next run.<br>
+
+The reason behind this is so that you can use the scripting capabilities of the underlying OS instead of the limited <br>
+options available with the SBE batch scripting.<br>
+
+Below is the BASH version of process_ctd. you can use standard BASH to manipulates the creation of the "sbe_batch.dat" file<br>
+The same can be done with the BATCH version for Windows.<br>
+
+#!/bin/bash<br>
+# Edit this file to setup ctd processing using wine.<br>
+
+# This line brings in the variable values<br>
+source config.cfg<br>
+
+echo "Checking for SBEBatch.exe in $SBE_DIR"<br>
+echo """"<br>
+if [ ! -f "$SBE_DIR/SBEBatch.exe" ]; then<br>
+    echo ""<br>
+    echo "SBEBatch.exe not found!"<br>
+    SBE_DIR="/home/user/.wine/drive_c/Program Files/Sea-Bird/SBEDataProcessing-Win32"<br>
+else<br>
+    echo ""<br>
+    echo "Found SBEBatch.exe!"<br>
+fi<br>
 
 
+echo "Checking for SBEBatch.exe in $SBE_DIR"<br>
+echo """"<br>
+if [ ! -f "$SBE_DIR/SBEBatch.exe" ]; then<br>
+    echo ""<br>
+    echo "The SeaBird processing software doesnt seem to be installed."<br>
+    echo "please install it in the default location and try again."<br>
+    exit 1<br>
+else<br>
+    echo ""<br>
+   echo "Found SBEBatch.exe!"<br>
+fi<br>
+echo ""<br>
+########################################################################<br>
+# The basename that will be used to assemble the filenames needed.     #<br>
+# This corresponds to %2 in the sbe_batch.dat script.                  #<br>
+#                                                                      #<br>
+BASENAME="$CRUISE_ID"_"$1"<br>
+########################################################################<br>
+<br>
+echo "@ %1 Path to the raw data files." > $BATCH_FILE<br>
+echo "@ %2 Basename used to create the filenames." >> $BATCH_FILE<br>
+echo "@ %3 Path where the processed 1db files will be placed." >> $BATCH_FILE<br>
+echo "@ %4 Path where the processed 1hz files will be placed." >> $BATCH_FILE<br>
+echo "@ %5 Path to the 1db psa files." >> $BATCH_FILE<br>
+echo "@ %6 Path to the 1hz psa files." >> $BATCH_FILE<br>
+echo "@ %7 Path where the bottle files will be placed." >> $BATCH_FILE<br>
+echo "" >> $BATCH_FILE<br>
+echo "" >> $BATCH_FILE<br>
+echo "@DatCNVW AlignCTDW WildEditW FilterW CellTMW LoopEditW RosSumW DeriveW BinAvgW StripW TransW SplitW" >> $BATCH_FILE<br>
+echo "" >>$BATCH_FILE<br>
+echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE<br>
+echo "@ 1DB PROCESSING @" >> $BATCH_FILE<br>
+echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE<br>
+echo "" >> $BATCH_FILE<br>
+echo "datcnv      /i%1/%2.hex   /p%5/DatCnv.psa      /f%2.cnv /o%3    /c%1/%2.xmlcon" >> $BATCH_FILE<br>
+echo "@markscan   /i%1/%2.mrk   /p%5/MarkScan.psa    /f%2.cnv /o%3" >> $BATCH_FILE<br>
+echo "alignctd    /i%3/%2.cnv   /p%5/AlignCTD.psa    /f%2.cnv /o%3" >> $BATCH_FILE<br>
+echo "wildedit    /i%3/%2.cnv   /p%5/WildEdit.psa    /f%2.cnv /o%3" >> $BATCH_FILE<br>
+echo "filter      /i%3/%2.cnv   /p%5/Filter.psa      /f%2.cnv /o%3" >> $BATCH_FILE<br>
+echo "loopedit    /i%3/%2.cnv   /p%5/LoopEdit.psa    /f%2.cnv /o%3" >> $BATCH_FILE<br>
+echo "celltm      /i%3/%2.cnv   /p%5/CellTM.psa      /f%2.cnv /o%3" >> $BATCH_FILE<br>
+echo "rossum      /i%3/%2.ros   /p%5/BottleSum.psa   /f%2.btl /o%7    /c%1/%2.xmlcon" >> $BATCH_FILE<br>
+echo "derive      /i%3/%2.cnv   /p%5/Derive.psa      /f%2.cnv /o%3    /c%1/%2.xmlcon" >> $BATCH_FILE<br>
+echo "binavg      /i%3/%2.cnv   /p%5/BinAvg.psa      /f%2.cnv /o%3" >> $BATCH_FILE<br>
+echo "trans       /i%3/%2.cnv   /p%5/Trans.psa       /f%2.cnv /o%3" >> $BATCH_FILE<br>
+echo "split       /i%3/%2.cnv   /p%5/Split.psa       /f%2.cnv /o%3" >> $BATCH_FILE<br>
+echo "" >> $BATCH_FILE<br>
+echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE<br>
+echo "@ 1HZ PROCESSING @" >> $BATCH_FILE<br>
+echo "@@@@@@@@@@@@@@@@@@" >> $BATCH_FILE<br>
+echo "" >> $BATCH_FILE<br>
+echo "@DatCNVW AlignCTDW WildEditW FilterW CellTMW BinAvgW StripW TransW" >> $BATCH_FILE<br>
+echo "" >> $BATCH_FILE<br>
+echo "datcnv      /i%1/%2.hex   /p%6/DatCnv.psa      /f%2.cnv /o%4    /c%1/%2.xmlcon" >> $BATCH_FILE<br>
+echo "alignctd    /i%4/%2.cnv   /p%6/AlignCTD.psa    /f%2.cnv /o%4" >> $BATCH_FILE<br>
+echo "wildedit    /i%4/%2.cnv   /p%6/WildEdit.psa    /f%2.cnv /o%4" >> $BATCH_FILE<br>
+echo "filter      /i%4/%2.cnv   /p%6/Filter.psa      /f%2.cnv /o%4" >> $BATCH_FILE<br>
+echo "celltm      /i%4/%2.cnv   /p%6/CellTM.psa      /f%2.cnv /o%4" >> $BATCH_FILE<br>
+echo "binavg      /i%4/%2.cnv   /p%6/BinAvg.psa      /f%2.cnv /o%4" >> $BATCH_FILE<br>
+echo "trans       /i%4/%2.cnv   /p%6/Trans.psa       /f%2.cnv /o%4" >> $BATCH_FILE<br>
 
 
+# wine is used to run the SBEBatch.exe program that will do the <br>
+# processing. Seven arguments are passed to the sbe_batch.dat script.<br>
+# this order is important. If the order is changed, make sure to make<br>
+# the changes in the sbe_batch file.<br>
+
+wine "$SBE_DIR"/SBEBatch.exe \<br>
+     "$BATCH_FILE" \<br>
+      "$RAW_DIR" \<br>
+      "$BASENAME" \<br>
+      "$PROCDATA_1DB_DIR" \<br>
+      "$PROCDATA_1HZ_DIR" \<br>
+      "$PSA_1DB"  \<br>
+      "$PSA_1HZ" \<br>
+      "$BOTTLE_DIR"<br>
 
 
 
