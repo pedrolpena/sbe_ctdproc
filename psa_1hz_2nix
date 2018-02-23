@@ -1,0 +1,56 @@
+
+#!/bin/bash
+
+if [ "$#" -ne 1  ]; then
+    echo "ERROR"
+    echo "This script takes one parameter, the path to the 1hz psa files."
+    echo "eg. psa_1hz_2nix $HOME/psa_1hz_files". 
+    echo ""
+    exit 1
+fi
+
+if [ ! -d $1 ]; then
+    echo "ERROR"
+    echo "$1 is not a directory" 
+    exit 1
+fi
+
+outFile="psa_1hz.txt"
+
+FILES="$1"/*
+echo "#### COPY BELOW THIS LINE ####" > "nix_$outFile"
+echo "" >> "nix_$outFile"
+
+echo "REM #### COPY BELOW THIS LINE ####" > "win_$outFile"
+echo "" >> "win_$outFile"
+
+for f in $FILES
+do
+  b=`basename $f`
+  echo "Processing $f"
+  echo "#### START $b ####">> "nix_$outFile"
+  echo "REM #### START $b ####">> "win_$outFile"
+  
+  #Create file for nix bash script.
+  grep '[[:print:]]' $f | head -n1 | sed "s/</echo '</g" | sed "s/>/>' > \"\$PSA_1HZ\"\/$b/g" | sed -e 's/^[[:space:]]*//' >> "nix_$outFile"
+  grep '[[:print:]]' $f | tail -n +2 | sed "s/</echo '</g" | sed "s/>/>' >> \"\$PSA_1HZ\"\/$b/g" | sed -e 's/^[[:space:]]*//' >> "nix_$outFile"
+  
+  #Create files for windows batch script.
+  grep '[[:print:]]' $f | head -n1 | sed "s/</echo \^</g" | sed "s/>/\^> >%PSA_1HZ%\\\\$b/g" | sed -e 's/^[[:space:]]*//' >> "win_$outFile"
+  grep '[[:print:]]' $f | tail -n +2 | sed "s/</echo \^</g" | sed "s/>/\^> >>%PSA_1HZ%\\\\$b/g" | sed -e 's/^[[:space:]]*//' >> "win_$outFile"  
+
+  echo "#### END $b ####">>"nix_$outFile"
+  echo "REM #### END $b ####">>"win_$outFile"
+done
+echo "" >> "nix_$outFile"
+echo "#### COPY ABOVE THIS LINE ####" >> "nix_$outFile"
+echo "" >> "win_$outFile"
+echo "REM #### COPY ABOVE THIS LINE ####" >> "win_$outFile"
+
+echo ""
+echo "copy and paste the contents of "nix_$outFile" into init_ctd_proc"
+echo "copy and paste the contents of "win_$outFile" into init_ctd_proc.bat"
+
+#echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\DatCnv.psa
+#echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\DatCnv.psa
+
