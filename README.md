@@ -128,9 +128,10 @@ or you could replace the code inside the init_ctd_proc scripts.<br>
 
 There are two scripts included that can help you do this.<br>
 Unfortunately these conversion scripts only work under BASH so you can't<br>
-use them in a CMD terminal. I guess if you have Windows 10 you could<br>
+use them in a windows CMD terminal. I guess if you have Windows 10 you could<br>
 enable WSL and install Ubuntu from the windows store but I have not<br>
 tested that.<br>
+
 
 These scripts would be very difficult for me to write as Batch scripts.<br>
 
@@ -145,8 +146,8 @@ chmod +x psa_1hz_2nix<br>
 
 Run the scripts<br>
 
-./psa_1db_2nix path_2_1db_PSA_Files
-./psa_1db_2nix path_2_1hz_PSA_Files
+./psa_1db_2nix path_2_1db_PSA_Files<br>
+./psa_1db_2nix path_2_1hz_PSA_Files<br>
 
 Four files will be generated.<br>
 
