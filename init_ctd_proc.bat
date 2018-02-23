@@ -2500,7 +2500,30 @@ echo :_EOF>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo CMD /C EXIT %_EXITSTATUS%>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
-copy init_ctd_proc.bat %SBEBATCH_DIR%
+
+SET DN0=%~dp0
+SET DN=%DN0:~0,-1%
+
+copy %DN%\init_ctd_proc.bat %SBEBATCH_DIR%
+copy %DN%\psa_1db_2nix %SBEBATCH_DIR%
+copy %DN%\psa_1hz_2nix %SBEBATCH_DIR%
+
+cls
+echo.
+echo.
+echo.
+echo This is now configured for basic CTD processing for cruise %CRUISE_ID%.
+echo Make sure the SeaBird processing software is installed and running.
+echo This script assumes that SBEBatch.exe is installed in either 
+echo C:\Program Files (x86)\Sea-Bird\SBEDataProcessing-Win32
+echo or C:\Program Files\Sea-Bird\SBEDataProcessing-Win32.
+echo.
+echo Place the raw CTD files in %RAW_DIR%
+echo To process navigate to %SBEBATCH_DIR% and type process_ctd nnn
+echo where nnn is the station number to process.
+echo.
+
+
 ENDLOCAL
 
 @echo off

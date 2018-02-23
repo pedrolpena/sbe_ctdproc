@@ -31,20 +31,20 @@ CRUISE_ID="$1"
 # Path to the Sea Bird executables that will run with wine.            #
 #                                                                      #
 SBE_DIR=$HOME/".wine/drive_c/Program Files (x86)/Sea-Bird\
-/SBEDataProcessing-Win32/"
+/SBEDataProcessing-Win32"
 #                                                                      #
 ########################################################################
 # Base directory that holds the CTD processing files                   #
 # All directories assosciated with CTD processing will fall under this #
 # directory.                                                           #
 #                                                                      #
-CTD_DIR="$BASE_DIR/ctd_proc/"
+CTD_DIR="$BASE_DIR/ctd_proc"
 #                                                                      #
 ########################################################################
 # Directory where the raw data files are placed.                       #
 # This corresponds to %1 in the sbe_batch.dat script.                  #
 #                                                                      #
-RAW_DIR="$CTD_DIR/raw_data/"
+RAW_DIR="$CTD_DIR/raw_data"
 #                                                                      # 
 ########################################################################
 # Directory where the 1db processed data will be placed.               #
@@ -79,7 +79,7 @@ BOTTLE_DIR="$CTD_DIR/bottle"
 ########################################################################
 # Directory that holds the processing scripts.                         # 
 #                                                                      #
-SBEBATCH_DIR="$CTD_DIR/batch_files/"
+SBEBATCH_DIR="$CTD_DIR/batch_files"
 #                                                                      #
 ########################################################################
 #                                                                      #
@@ -2327,13 +2327,13 @@ echo '# Base directory that holds the CTD processing files                   #' 
 echo '# All directories assosciated with CTD processing will fall under this #' >> "$SBEBATCH_DIR"/config.cfg
 echo '# directory.                                                           #' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
-echo 'CTD_DIR="$BASE_DIR/ctd_proc/"' >> "$SBEBATCH_DIR"/config.cfg
+echo 'CTD_DIR="$BASE_DIR/ctd_proc"' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
 echo '########################################################################' >> "$SBEBATCH_DIR"/config.cfg
 echo '# Directory where the raw data files are placed.                       #' >> "$SBEBATCH_DIR"/config.cfg
 echo '# This corresponds to %1 in the sbe_batch.dat script.                  #' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
-echo 'RAW_DIR="$CTD_DIR/raw_data/"' >> "$SBEBATCH_DIR"/config.cfg
+echo 'RAW_DIR="$CTD_DIR/raw_data"' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
 echo '########################################################################' >> "$SBEBATCH_DIR"/config.cfg
 echo '# Directory where the 1db processed data will be placed.               #' >> "$SBEBATCH_DIR"/config.cfg
@@ -2368,7 +2368,7 @@ echo '#                                                                      #' 
 echo '########################################################################' >> "$SBEBATCH_DIR"/config.cfg
 echo '# Directory that holds the processing scripts.                         #' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
-echo 'SBEBATCH_DIR="$CTD_DIR/batch_files/"' >> "$SBEBATCH_DIR"/config.cfg
+echo 'SBEBATCH_DIR="$CTD_DIR/batch_files"' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
 echo '########################################################################' >> "$SBEBATCH_DIR"/config.cfg
 echo '#                                                                      #' >> "$SBEBATCH_DIR"/config.cfg
@@ -2408,7 +2408,7 @@ echo 'else' >> "$SBEBATCH_DIR"/process_ctd
 echo '    echo ""' >> "$SBEBATCH_DIR"/process_ctd
 echo '   echo "Found SBEBatch.exe!"' >> "$SBEBATCH_DIR"/process_ctd        
 echo 'fi' >> "$SBEBATCH_DIR"/process_ctd
-echo 'echo ""'
+echo 'echo ""'>> "$SBEBATCH_DIR"/process_ctd
 
 
 echo '########################################################################' >> "$SBEBATCH_DIR"/process_ctd
@@ -2476,16 +2476,20 @@ echo '      "$PSA_1DB"  \' >> "$SBEBATCH_DIR"/process_ctd
 echo '      "$PSA_1HZ" \' >> "$SBEBATCH_DIR"/process_ctd
 echo '      "$BOTTLE_DIR"' >> "$SBEBATCH_DIR"/process_ctd
 
+DN=`dirname "$0"`
 chmod +x "$SBEBATCH_DIR"/process_ctd
-cp init_ctd_proc "$SBEBATCH_DIR"
+cp "$DN"/init_ctd_proc "$SBEBATCH_DIR"
+cp "$DN"/psa_1db_2nix "$SBEBATCH_DIR"
+cp "$DN"/psa_1hz_2nix "$SBEBATCH_DIR"
 
+clear
 
 echo ""
 echo ""
 echo ""
 echo "This is now configured for basic CTD processing for cruise "$CRUISE_ID". Make sure wine is"
 echo "installed and that the SeaBird processing software is installed and running."
-echo "This script assumes that wine is installed in he default prefix "$HOME/.wine
+echo "This script assumes that wine is installed in the default prefix "$HOME/.wine
 echo "and that SBEBatch.exe is installed in "$HOME"/.wine/drive_c/Program Files/Sea-Bird/SBEDataProcessing-Win32"
 echo "If they arn't, modify config.cfg and process_ctd with the correct paths."
 echo ""
