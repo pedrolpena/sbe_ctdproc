@@ -166,18 +166,18 @@ Now you can run the init_ctd_proc scripts with the new PSA files.<br>
 Additional Notes
 ================
 
-You'll notice that there isn't a and SBE batch file doesn't exist before you process a cast for the first time.<br>
+You'll notice that an SBE batch file doesn't exist before you process a cast for the first time.<br>
 This is because the process_ctd scripts generate "sbe_batch.dat" when run.<br> 
 A new file is generated every time so any changes made to the file will be destroyed on the next run.<br>
 
 The reason behind this is so that you can use the scripting capabilities of the underlying OS instead of the limited <br>
 options available with the SBE batch scripting.<br>
 
-Below is the BASH version of process_ctd. you can use standard BASH to manipulates the creation of the "sbe_batch.dat" file<br>
+Below is the BASH version of process_ctd. you can use standard BASH to manipulate the creation of the "sbe_batch.dat" file.<br>
 The same can be done with the BATCH version for Windows.<br>
 
 #!/bin/bash<br>
-# Edit this file to setup ctd processing using wine.<br>
+[# Edit this file to setup ctd processing using wine.]<br>
 
 # This line brings in the variable values<br>
 source config.cfg<br>
@@ -206,12 +206,12 @@ else<br>
    echo "Found SBEBatch.exe!"<br>
 fi<br>
 echo ""<br>
-########################################################################<br>
-# The basename that will be used to assemble the filenames needed.     #<br>
-# This corresponds to %2 in the sbe_batch.dat script.                  #<br>
-#                                                                      #<br>
+[########################################################################]<br>
+[# The basename that will be used to assemble the filenames needed.     #]<br>
+[# This corresponds to %2 in the sbe_batch.dat script.                  #]<br>
+[#                                                                      #]<br>
 BASENAME="$CRUISE_ID"_"$1"<br>
-########################################################################<br>
+[########################################################################]<br>
 <br>
 echo "@ %1 Path to the raw data files." > $BATCH_FILE<br>
 echo "@ %2 Basename used to create the filenames." >> $BATCH_FILE<br>
