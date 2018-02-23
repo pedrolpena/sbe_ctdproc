@@ -2466,8 +2466,8 @@ echo '# processing. Seven arguments are passed to the sbe_batch.dat script.' >> 
 echo '# this order is important. If the order is changed, make sure to make' >> "$SBEBATCH_DIR"/process_ctd
 echo '# the changes in the sbe_batch file.' >> "$SBEBATCH_DIR"/process_ctd
 echo ''  >> "$SBEBATCH_DIR"/process_ctd
-echo 'wine "$SBE_DIR"/SBEBatch.exe \' >> "$SBEBATCH_DIR"/process_ctd
-echo '     "$BATCH_FILE" \' >> "$SBEBATCH_DIR"/process_ctd
+echo 'wine  "$SBE_DIR"/SBEBatch.exe \' >> "$SBEBATCH_DIR"/process_ctd
+echo '      "$BATCH_FILE" \' >> "$SBEBATCH_DIR"/process_ctd
 echo '      "$RAW_DIR" \' >> "$SBEBATCH_DIR"/process_ctd
 echo '      "$BASENAME" \' >> "$SBEBATCH_DIR"/process_ctd
 echo '      "$PROCDATA_1DB_DIR" \' >> "$SBEBATCH_DIR"/process_ctd

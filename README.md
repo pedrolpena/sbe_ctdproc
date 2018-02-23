@@ -271,8 +271,8 @@ echo "trans       /i%4/%2.cnv   /p%6/Trans.psa       /f%2.cnv /o%4" >> $BATCH_FI
 # this order is important. If the order is changed, make sure to make
 # the changes in the sbe_batch file.
 
-wine "$SBE_DIR"/SBEBatch.exe \
-     "$BATCH_FILE" \
+wine  "$SBE_DIR"/SBEBatch.exe \
+      "$BATCH_FILE" \
       "$RAW_DIR" \
       "$BASENAME" \
       "$PROCDATA_1DB_DIR" \
