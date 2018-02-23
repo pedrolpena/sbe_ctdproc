@@ -129,551 +129,127 @@ IF NOT EXIST %SBEBATCH_DIR% (
 
 
 REM # Generate 1db files
-REM #############################DatCnv.psa#################################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\DatCnv.psa
-echo ^<Data_Conversion ^> >>%PSA_1DB%\DatCnv.psa
-echo ^<Version value="7.23.1" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ServerName value="Data Conversion" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<InstrumentPath value="J:\ab1602\sbe_ctd\raw_data\ab1602_001.xmlcon" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<InstrumentMatch value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<InputDir value="J:\ab1602\sbe_ctd\raw_data" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ArrayItem index="0" value="ab1602_001.hex" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</InputFileArray^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<OutputDir value="J:\ab1602\sbe_ctd\1db\proc_data" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<NameAppend value="" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<OutputFile value="ab1602_001" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<LastProcessed value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ProcessScansToEnd value="1" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ScansToSkip value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ScansToProcess value="1" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<MergeHeaderFile value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<OutputFormat value="0" high="1" low="0" initialValue="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FromCast value="0" high="1" low="0" initialValue="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CreateFile value="2" high="2" low="0" initialValue="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ScanRangeSource value="3" high="3" low="0" initialValue="3" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ScanRangeOffset value="0.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ScanRangeDuration value="5.500000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<StartTimeOption value="1" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<PromptForNoteAndOrStartTime value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArray Size="15" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="0" CalcID="72" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="-1" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Scan Count" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="1" CalcID="84" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="52" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Time, Elapsed [seconds]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="2" CalcID="17" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="31" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Depth [salt water, m]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Latitude value="26.500000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="3" CalcID="65" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="3" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="4" CalcID="81" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="6" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="5" CalcID="81" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="6" Ordinal="1" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="6" CalcID="12" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="58" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Conductivity [S/m]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="7" CalcID="12" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="58" Ordinal="1" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="8" CalcID="57" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="63" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="9" CalcID="57" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="63" Ordinal="1" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="10" CalcID="1" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="29" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Altimeter [m]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="11" CalcID="39" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Latitude [deg]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="12" CalcID="40" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Longitude [deg]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="13" CalcID="55" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="68" Ordinal="0" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Oxygen, SBE 43 [dov/dt]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<WindowSize value="5.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ApplyTauCorrection value="1" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<CalcArrayItem index="14" CalcID="55" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Calc UnitID="68" Ordinal="1" ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<FullName value="Oxygen, SBE 43, 2 [dov/dt]" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<WindowSize value="5.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ApplyTauCorrection value="1" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Calc^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArrayItem^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</CalcArray^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<MiscellaneousDataForCalculations ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Latitude value="26.500000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Longitude value="0.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<DescentRateAndAcceleration ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<WindowSize value="2.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</DescentRateAndAcceleration^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<Oxygen ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<WindowSize value="5.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ApplyTauCorrection value="1" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Oxygen^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<AverageSoundVelocity ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<MinimumPressure value="20.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<MinimumSalinity value="20.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<PressureWindowSize value="20.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<TimeWindowSize value="60.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</AverageSoundVelocity^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<PlumeAnomaly ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ThetaB value="0.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<SalinityB value="0.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ThetaZSalinityZRatio value="0.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<ReferencePressure value="0.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</PlumeAnomaly^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<PotentialTempAnomaly ^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<A0 value="0.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<A1 value="0.000000" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^<A1Multiplier value="0" /^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</PotentialTempAnomaly^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</MiscellaneousDataForCalculations^> >>"%PSA_1DB%\DatCnv.psa
-echo ^</Data_Conversion^> >>"%PSA_1DB%\DatCnv.psa
+REM #### COPY BELOW THIS LINE ####
 
-REM ########################################################################
-
-
-
-REM ########################MarkScan.psa####################################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> > %PSA_1DB%\MarkScan.psa
-echo ^<Mark_Scan ^> >> %PSA_1DB%\MarkScan.psa
-echo ^<Version value="7.23.1" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^<ServerName value="Mark Scan" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^<InputDir value="Z:\Users\james.hooper" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^<InputFileArray size="0" GrowBy="-1" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^<OutputDir value="Z:\Users\james.hooper" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^<NameAppend value="" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^<OutputFile value="" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^<Offset value="-5" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^<Duration value="10" /^> >> %PSA_1DB%\MarkScan.psa
-echo ^</Mark_Scan^> >> %PSA_1DB%\MarkScan.psa
-REM ########################################################################
-
-
-REM ###########################AlignCTD.psa#################################
- echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\AlignCTD.psa
- echo ^<Align_CTD ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Version value="7.25.0.319" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ServerName value="Align CTD" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<InputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</InputFileArray^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<OutputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<NameAppend value="" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArray Size="11" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="0" CalcID="81" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="1" CalcID="81" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="2" CalcID="12" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="3" CalcID="12" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="4" CalcID="57" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="5" CalcID="57" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="6" CalcID="1" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="29" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Altimeter [m]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="7" CalcID="39" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="8" CalcID="40" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="9" CalcID="55" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="68" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Oxygen, SBE 43 [dov/dt]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<CalcArrayItem index="10" CalcID="55" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<Calc UnitID="68" Ordinal="1" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<FullName value="Oxygen, SBE 43, 2 [dov/dt]" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</CalcArray^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArray size="11" ^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="0" value="0.000000" variable_name="Temperature" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="1" value="0.000000" variable_name="Temperature" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="2" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="3" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="4" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="5" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="6" value="0.000000" variable_name="Altimeter" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="7" value="0.000000" variable_name="Latitude" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="8" value="0.000000" variable_name="Longitude" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="9" value="1.073000" variable_name="Oxygen, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^<ValArrayItem index="10" value="1.073000" variable_name="Oxygen, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</ValArray^> >>%PSA_1DB%\AlignCTD.psa
- echo ^</Align_CTD^> >>%PSA_1DB%\AlignCTD.psa
-
-REM ########################################################################
-
-
-REM #############################WildEdit.psa###############################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\WildEdit.psa
-echo ^<Wild_Edit ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Version value="7.25.0.319" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ServerName value="Wild Edit" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<InputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</InputFileArray^> >>%PSA_1DB%\WildEdit.psa
-echo ^<OutputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<NameAppend value="" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<StdDevPassOne value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<StdDevPassTwo value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ScansPerBlock value="100" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<MinDelta value="0.005000" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArray Size="13" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="0" CalcID="17" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="31" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Depth [salt water, m]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Latitude value="0.000000" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="1" CalcID="65" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="2" CalcID="81" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="3" CalcID="81" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="4" CalcID="12" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="5" CalcID="12" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="6" CalcID="57" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="7" CalcID="57" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="8" CalcID="1" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="29" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Altimeter [m]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="9" CalcID="39" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="10" CalcID="40" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="11" CalcID="55" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="68" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Oxygen, SBE 43 [dov/dt]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^<CalcArrayItem index="12" CalcID="55" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Calc UnitID="68" Ordinal="1" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<FullName value="Oxygen, SBE 43, 2 [dov/dt]" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
-echo ^</CalcArray^> >>%PSA_1DB%\WildEdit.psa
-echo ^<SelectArray ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="0" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="1" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="2" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="3" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="4" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="5" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="6" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="7" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="8" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="9" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="10" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="11" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="12" value="1" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^</SelectArray^> >>%PSA_1DB%\WildEdit.psa
-echo ^</Wild_Edit^> >>%PSA_1DB%\WildEdit.psa
-
-REM ########################################################################
-
-
-REM #################################Filter.psa#############################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\Filter.psa
-echo ^<Filter ^> >>%PSA_1DB%\Filter.psa
-echo ^<Version value="7.21h" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ServerName value="Filter" /^> >>%PSA_1DB%\Filter.psa
-echo ^<InputDir value="Z:\Users\jhooper\Documents\Work_Data\WBTS\ab1403\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\Filter.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="0" value="ab1403_002.cnv" /^> >>%PSA_1DB%\Filter.psa
-echo ^</InputFileArray^> >>%PSA_1DB%\Filter.psa
-echo ^<OutputDir value="Z:\Users\jhooper\Documents\Work_Data\WBTS\ab1403\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\Filter.psa
-echo ^<NameAppend value="" /^> >>%PSA_1DB%\Filter.psa
-echo ^<OutputFile value="ab1403_002.cnv" /^> >>%PSA_1DB%\Filter.psa
-echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\Filter.psa
-echo ^<TimeConstFilterA value="0.030000" /^> >>%PSA_1DB%\Filter.psa
-echo ^<TimeConstFilterB value="0.150000" /^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArray Size="13" ^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="0" CalcID="17" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="31" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Depth [salt water, m]" /^> >>%PSA_1DB%\Filter.psa
-echo ^<Latitude value="0.000000" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="1" CalcID="65" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="2" CalcID="81" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="3" CalcID="81" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="4" CalcID="12" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="5" CalcID="12" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="6" CalcID="57" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="7" CalcID="57" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="8" CalcID="1" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="29" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Altimeter [m]" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="9" CalcID="39" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="10" CalcID="40" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="11" CalcID="55" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="68" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Oxygen, SBE 43 [dov/dt]" /^> >>%PSA_1DB%\Filter.psa
-echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^<CalcArrayItem index="12" CalcID="55" ^> >>%PSA_1DB%\Filter.psa
-echo ^<Calc UnitID="68" Ordinal="1" ^> >>%PSA_1DB%\Filter.psa
-echo ^<FullName value="Oxygen, SBE 43, 2 [dov/dt]" /^> >>%PSA_1DB%\Filter.psa
-echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^</Calc^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
-echo ^</CalcArray^> >>%PSA_1DB%\Filter.psa
-echo ^<FilterTypeArray ^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="0" value="2" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="1" value="2" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="2" value="0" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="3" value="0" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="4" value="0" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="5" value="0" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="6" value="0" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="7" value="0" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="8" value="0" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="9" value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="10" value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="11" value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^<ArrayItem index="12" value="1" /^> >>%PSA_1DB%\Filter.psa
-echo ^</FilterTypeArray^> >>%PSA_1DB%\Filter.psa
-echo ^</Filter^> >>%PSA_1DB%\Filter.psa
-
-REM ########################################################################
-
-
-REM ############################LoopEdit.psa################################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\LoopEdit.psa
-echo ^<Loop_Edit ^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<Version value="7.21h" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<ServerName value="Loop Edit" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<InputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<ArrayItem index="0" value="rv1203_001.cnv" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^</InputFileArray^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<OutputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<NameAppend value="" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<OutputFile value="rv1203_001.cnv" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<MinVelocityType value="0" high="1" low="0" initialValue="0" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<MinCTD_Velocity value="0.250000" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<TimeWindowSize value="300.000000" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<PercentMeanSpeed value="20.000000" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<RemoveSurfaceSoak value="1" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<UseDeckPressure value="1" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<SurfaceSoakDepth value="10.000000" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<SurfaceSoakDepthMin value="5.000000" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^<SurfaceSoakDepthMax value="20.000000" /^> >>%PSA_1DB%\LoopEdit.psa
-echo ^</Loop_Edit^> >>%PSA_1DB%\LoopEdit.psa
-
-REM ########################################################################
-
-
-REM ###############################CellTM.psa###############################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\CellTM.psa
-echo ^<Cell_Thermal_Mass ^> >>%PSA_1DB%\CellTM.psa
-echo ^<Version value="7.21h" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<ServerName value="Cell Thermal Mass" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<InputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1302\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\CellTM.psa
-echo ^<ArrayItem index="0" value="ab1302_001.cnv" /^> >>%PSA_1DB%\CellTM.psa
-echo ^</InputFileArray^> >>%PSA_1DB%\CellTM.psa
-echo ^<OutputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1302\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<NameAppend value="" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<OutputFile value="ab1302_001.cnv" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<Primary ^> >>%PSA_1DB%\CellTM.psa
-echo ^<Correct value="1" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<TempSensor value="0" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<TA_Amplitude value="0.030000" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<TA_TimeConstant value="7.000000" /^> >>%PSA_1DB%\CellTM.psa
-echo ^</Primary^> >>%PSA_1DB%\CellTM.psa
-echo ^<Secondary ^> >>%PSA_1DB%\CellTM.psa
-echo ^<Correct value="1" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<TempSensor value="1" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<TA_Amplitude value="0.030000" /^> >>%PSA_1DB%\CellTM.psa
-echo ^<TA_TimeConstant value="7.000000" /^> >>%PSA_1DB%\CellTM.psa
-echo ^</Secondary^> >>%PSA_1DB%\CellTM.psa
-echo ^</Cell_Thermal_Mass^> >>%PSA_1DB%\CellTM.psa
-
-REM ########################################################################
-
-
-REM #############################BottleSum.psa##############################
+REM #### START AlignCTD.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\AlignCTD.psa
+echo ^<Align_CTD ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Version value="7.25.0.319" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ServerName value="Align CTD" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<InputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</InputFileArray^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<OutputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArray Size="11" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="0" CalcID="81" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="1" CalcID="81" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="2" CalcID="12" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="3" CalcID="12" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="4" CalcID="57" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="5" CalcID="57" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="6" CalcID="1" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="29" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Altimeter [m]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="7" CalcID="39" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="8" CalcID="40" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="9" CalcID="55" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="68" Ordinal="0" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Oxygen, SBE 43 [dov/dt]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<CalcArrayItem index="10" CalcID="55" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Calc UnitID="68" Ordinal="1" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<FullName value="Oxygen, SBE 43, 2 [dov/dt]" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</CalcArray^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArray size="11" ^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="0" value="0.000000" variable_name="Temperature" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="1" value="0.000000" variable_name="Temperature" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="2" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="3" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="4" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="5" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="6" value="0.000000" variable_name="Altimeter" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="7" value="0.000000" variable_name="Latitude" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="8" value="0.000000" variable_name="Longitude" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="9" value="1.073000" variable_name="Oxygen, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="10" value="1.073000" variable_name="Oxygen, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</ValArray^> >>%PSA_1DB%\AlignCTD.psa
+echo ^</Align_CTD^> >>%PSA_1DB%\AlignCTD.psa
+REM #### END AlignCTD.psa ####
+REM #### START BinAvg.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\BinAvg.psa
+echo ^<Bin_Average ^> >>%PSA_1DB%\BinAvg.psa
+echo ^<Version value="7.21k" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<ServerName value="Bin Average" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<InputDir value="J:\ab1602\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\BinAvg.psa
+echo ^<ArrayItem index="0" value="ab1602_028.cnv" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^</InputFileArray^> >>%PSA_1DB%\BinAvg.psa
+echo ^<OutputDir value="J:\ab1602\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<OutputFile value="ab1602_028.cnv" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<BinType value="0" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<BinSize value="1.000000" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<IncludeNumberScans value="1" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<ScansToSkip value="0" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<CastToProcess value="0" high="2" low="0" initialValue="0" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<IncludeSurfaceBin value="0" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<SurfaceBinMinVal value="0.000000" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<SurfaceBinMaxVal value="0.000000" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<SurfaceBinVal value="0.000000" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^</Bin_Average^> >>%PSA_1DB%\BinAvg.psa
+REM #### END BinAvg.psa ####
+REM #### START BottleSum.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\BottleSum.psa
 echo ^<Bottle_Summary ^> >>%PSA_1DB%\BottleSum.psa
 echo ^<Version value="7.21h" /^> >>%PSA_1DB%\BottleSum.psa
@@ -832,11 +408,179 @@ echo ^</CalcArrayItem^> >>%PSA_1DB%\BottleSum.psa
 echo ^</DeriveCalcArray^> >>%PSA_1DB%\BottleSum.psa
 echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\BottleSum.psa
 echo ^</Bottle_Summary^> >>%PSA_1DB%\BottleSum.psa
-
-REM ########################################################################
-
-
-REM ###################################Derive.psa###########################
+REM #### END BottleSum.psa ####
+REM #### START CellTM.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\CellTM.psa
+echo ^<Cell_Thermal_Mass ^> >>%PSA_1DB%\CellTM.psa
+echo ^<Version value="7.21h" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<ServerName value="Cell Thermal Mass" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<InputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1302\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\CellTM.psa
+echo ^<ArrayItem index="0" value="ab1302_001.cnv" /^> >>%PSA_1DB%\CellTM.psa
+echo ^</InputFileArray^> >>%PSA_1DB%\CellTM.psa
+echo ^<OutputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1302\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<OutputFile value="ab1302_001.cnv" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<Primary ^> >>%PSA_1DB%\CellTM.psa
+echo ^<Correct value="1" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<TempSensor value="0" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<TA_Amplitude value="0.030000" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<TA_TimeConstant value="7.000000" /^> >>%PSA_1DB%\CellTM.psa
+echo ^</Primary^> >>%PSA_1DB%\CellTM.psa
+echo ^<Secondary ^> >>%PSA_1DB%\CellTM.psa
+echo ^<Correct value="1" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<TempSensor value="1" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<TA_Amplitude value="0.030000" /^> >>%PSA_1DB%\CellTM.psa
+echo ^<TA_TimeConstant value="7.000000" /^> >>%PSA_1DB%\CellTM.psa
+echo ^</Secondary^> >>%PSA_1DB%\CellTM.psa
+echo ^</Cell_Thermal_Mass^> >>%PSA_1DB%\CellTM.psa
+REM #### END CellTM.psa ####
+REM #### START DatCnv.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\DatCnv.psa
+echo ^<Data_Conversion ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Version value="7.23.1" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ServerName value="Data Conversion" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<InstrumentPath value="J:\ab1602\sbe_ctd\raw_data\ab1602_001.xmlcon" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<InstrumentMatch value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<InputDir value="J:\ab1602\sbe_ctd\raw_data" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ArrayItem index="0" value="ab1602_001.hex" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</InputFileArray^> >>%PSA_1DB%\DatCnv.psa
+echo ^<OutputDir value="J:\ab1602\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<OutputFile value="ab1602_001" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ProcessScansToEnd value="1" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ScansToSkip value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ScansToProcess value="1" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<MergeHeaderFile value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<OutputFormat value="0" high="1" low="0" initialValue="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FromCast value="0" high="1" low="0" initialValue="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CreateFile value="2" high="2" low="0" initialValue="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ScanRangeSource value="3" high="3" low="0" initialValue="3" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ScanRangeOffset value="0.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ScanRangeDuration value="5.500000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<StartTimeOption value="1" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<PromptForNoteAndOrStartTime value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArray Size="15" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="0" CalcID="72" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="-1" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Scan Count" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="1" CalcID="84" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="52" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Time, Elapsed [seconds]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="2" CalcID="17" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="31" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Depth [salt water, m]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Latitude value="26.500000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="3" CalcID="65" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="4" CalcID="81" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="5" CalcID="81" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="6" CalcID="12" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="7" CalcID="12" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="8" CalcID="57" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="9" CalcID="57" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="10" CalcID="1" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="29" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Altimeter [m]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="11" CalcID="39" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="12" CalcID="40" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="13" CalcID="55" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="68" Ordinal="0" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Oxygen, SBE 43 [dov/dt]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<WindowSize value="5.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^<CalcArrayItem index="14" CalcID="55" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Calc UnitID="68" Ordinal="1" ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<FullName value="Oxygen, SBE 43, 2 [dov/dt]" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<WindowSize value="5.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\DatCnv.psa
+echo ^</CalcArray^> >>%PSA_1DB%\DatCnv.psa
+echo ^<MiscellaneousDataForCalculations ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Latitude value="26.500000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Longitude value="0.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<DescentRateAndAcceleration ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</DescentRateAndAcceleration^> >>%PSA_1DB%\DatCnv.psa
+echo ^<Oxygen ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<WindowSize value="5.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Oxygen^> >>%PSA_1DB%\DatCnv.psa
+echo ^<AverageSoundVelocity ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<MinimumPressure value="20.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<MinimumSalinity value="20.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<PressureWindowSize value="20.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<TimeWindowSize value="60.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</AverageSoundVelocity^> >>%PSA_1DB%\DatCnv.psa
+echo ^<PlumeAnomaly ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ThetaB value="0.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<SalinityB value="0.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ThetaZSalinityZRatio value="0.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<ReferencePressure value="0.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</PlumeAnomaly^> >>%PSA_1DB%\DatCnv.psa
+echo ^<PotentialTempAnomaly ^> >>%PSA_1DB%\DatCnv.psa
+echo ^<A0 value="0.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<A1 value="0.000000" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^<A1Multiplier value="0" /^> >>%PSA_1DB%\DatCnv.psa
+echo ^</PotentialTempAnomaly^> >>%PSA_1DB%\DatCnv.psa
+echo ^</MiscellaneousDataForCalculations^> >>%PSA_1DB%\DatCnv.psa
+echo ^</Data_Conversion^> >>%PSA_1DB%\DatCnv.psa
+REM #### END DatCnv.psa ####
+REM #### START Derive.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\Derive.psa
 echo ^<Derive ^> >>%PSA_1DB%\Derive.psa
 echo ^<Version value="7.25.0.319" /^> >>%PSA_1DB%\Derive.psa
@@ -955,76 +699,156 @@ echo ^<A1Multiplier value="0" /^> >>%PSA_1DB%\Derive.psa
 echo ^</PotentialTempAnomaly^> >>%PSA_1DB%\Derive.psa
 echo ^</MiscellaneousDataForCalculations^> >>%PSA_1DB%\Derive.psa
 echo ^</Derive^> >>%PSA_1DB%\Derive.psa
-
-REM ########################################################################
-
-REM ###############################BinAvg.psa###############################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\BinAvg.psa
-echo ^<Bin_Average ^> >>%PSA_1DB%\BinAvg.psa
-echo ^<Version value="7.21k" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<ServerName value="Bin Average" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<InputDir value="J:\ab1602\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\BinAvg.psa
-echo ^<ArrayItem index="0" value="ab1602_028.cnv" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^</InputFileArray^> >>%PSA_1DB%\BinAvg.psa
-echo ^<OutputDir value="J:\ab1602\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<NameAppend value="" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<OutputFile value="ab1602_028.cnv" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<BinType value="0" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<BinSize value="1.000000" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<IncludeNumberScans value="1" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<ScansToSkip value="0" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<CastToProcess value="0" high="2" low="0" initialValue="0" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<IncludeSurfaceBin value="0" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<SurfaceBinMinVal value="0.000000" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<SurfaceBinMaxVal value="0.000000" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<SurfaceBinVal value="0.000000" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^</Bin_Average^> >>%PSA_1DB%\BinAvg.psa
-
-REM ########################################################################
-
-
-REM ##################################Trans.psa#############################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\Trans.psa
-echo ^<Translate ^> >>%PSA_1DB%\Trans.psa
-echo ^<Version value="7.21h" /^> >>%PSA_1DB%\Trans.psa
-echo ^<ServerName value="Translate" /^> >>%PSA_1DB%\Trans.psa
-echo ^<InputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\Trans.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\Trans.psa
-echo ^<ArrayItem index="0" value="rv1203_001.cnv" /^> >>%PSA_1DB%\Trans.psa
-echo ^</InputFileArray^> >>%PSA_1DB%\Trans.psa
-echo ^<OutputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\Trans.psa
-echo ^<NameAppend value="" /^> >>%PSA_1DB%\Trans.psa
-echo ^<OutputFile value="rv1203_001.cnv" /^> >>%PSA_1DB%\Trans.psa
-echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\Trans.psa
-echo ^<Translation value="0" high="2" low="0" initialValue="0" /^> >>%PSA_1DB%\Trans.psa
-echo ^</Translate^> >>%PSA_1DB%\Trans.psa
-
-REM ########################################################################
-
-
-REM #############################Split.psa##################################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\Split.psa
-echo ^<Split ^> >>%PSA_1DB%\Split.psa
-echo ^<Version value="7.21h" /^> >>%PSA_1DB%\Split.psa
-echo ^<ServerName value="Split" /^> >>%PSA_1DB%\Split.psa
-echo ^<InputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\Split.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\Split.psa
-echo ^<ArrayItem index="0" value="rv1203_001.cnv" /^> >>%PSA_1DB%\Split.psa
-echo ^</InputFileArray^> >>%PSA_1DB%\Split.psa
-echo ^<OutputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\Split.psa
-echo ^<NameAppend value="" /^> >>%PSA_1DB%\Split.psa
-echo ^<OutputFile value="rv1203_001.cnv" /^> >>%PSA_1DB%\Split.psa
-echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\Split.psa
-echo ^<OutputFiles value="0" high="1" low="0" initialValue="0" /^> >>%PSA_1DB%\Split.psa
-echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\Split.psa
-echo ^</Split^> >>%PSA_1DB%\Split.psa
-
-REM ########################################################################
-
-REM ##############################SeaPlot.psa###############################
+REM #### END Derive.psa ####
+REM #### START Filter.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\Filter.psa
+echo ^<Filter ^> >>%PSA_1DB%\Filter.psa
+echo ^<Version value="7.21h" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ServerName value="Filter" /^> >>%PSA_1DB%\Filter.psa
+echo ^<InputDir value="Z:\Users\jhooper\Documents\Work_Data\WBTS\ab1403\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\Filter.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="0" value="ab1403_002.cnv" /^> >>%PSA_1DB%\Filter.psa
+echo ^</InputFileArray^> >>%PSA_1DB%\Filter.psa
+echo ^<OutputDir value="Z:\Users\jhooper\Documents\Work_Data\WBTS\ab1403\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\Filter.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\Filter.psa
+echo ^<OutputFile value="ab1403_002.cnv" /^> >>%PSA_1DB%\Filter.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\Filter.psa
+echo ^<TimeConstFilterA value="0.030000" /^> >>%PSA_1DB%\Filter.psa
+echo ^<TimeConstFilterB value="0.150000" /^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArray Size="13" ^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="0" CalcID="17" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="31" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Depth [salt water, m]" /^> >>%PSA_1DB%\Filter.psa
+echo ^<Latitude value="0.000000" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="1" CalcID="65" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="2" CalcID="81" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="3" CalcID="81" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="4" CalcID="12" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="5" CalcID="12" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="6" CalcID="57" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="7" CalcID="57" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="8" CalcID="1" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="29" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Altimeter [m]" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="9" CalcID="39" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="10" CalcID="40" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="11" CalcID="55" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="68" Ordinal="0" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Oxygen, SBE 43 [dov/dt]" /^> >>%PSA_1DB%\Filter.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^<CalcArrayItem index="12" CalcID="55" ^> >>%PSA_1DB%\Filter.psa
+echo ^<Calc UnitID="68" Ordinal="1" ^> >>%PSA_1DB%\Filter.psa
+echo ^<FullName value="Oxygen, SBE 43, 2 [dov/dt]" /^> >>%PSA_1DB%\Filter.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^</Calc^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\Filter.psa
+echo ^</CalcArray^> >>%PSA_1DB%\Filter.psa
+echo ^<FilterTypeArray ^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="0" value="2" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="1" value="2" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="2" value="0" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="3" value="0" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="4" value="0" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="5" value="0" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="6" value="0" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="7" value="0" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="8" value="0" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="9" value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="10" value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="11" value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^<ArrayItem index="12" value="1" /^> >>%PSA_1DB%\Filter.psa
+echo ^</FilterTypeArray^> >>%PSA_1DB%\Filter.psa
+echo ^</Filter^> >>%PSA_1DB%\Filter.psa
+REM #### END Filter.psa ####
+REM #### START LoopEdit.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\LoopEdit.psa
+echo ^<Loop_Edit ^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<Version value="7.21h" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<ServerName value="Loop Edit" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<InputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<ArrayItem index="0" value="rv1203_001.cnv" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^</InputFileArray^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<OutputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<OutputFile value="rv1203_001.cnv" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<MinVelocityType value="0" high="1" low="0" initialValue="0" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<MinCTD_Velocity value="0.250000" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<TimeWindowSize value="300.000000" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<PercentMeanSpeed value="20.000000" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<RemoveSurfaceSoak value="1" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<UseDeckPressure value="1" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<SurfaceSoakDepth value="10.000000" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<SurfaceSoakDepthMin value="5.000000" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^<SurfaceSoakDepthMax value="20.000000" /^> >>%PSA_1DB%\LoopEdit.psa
+echo ^</Loop_Edit^> >>%PSA_1DB%\LoopEdit.psa
+REM #### END LoopEdit.psa ####
+REM #### START MarkScan.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\MarkScan.psa
+echo ^<Mark_Scan ^> >>%PSA_1DB%\MarkScan.psa
+echo ^<Version value="7.23.1" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^<ServerName value="Mark Scan" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^<InputDir value="Z:\Users\james.hooper" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^<InputFileArray size="0" GrowBy="-1" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^<OutputDir value="Z:\Users\james.hooper" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^<OutputFile value="" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^<Offset value="-5" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^<Duration value="10" /^> >>%PSA_1DB%\MarkScan.psa
+echo ^</Mark_Scan^> >>%PSA_1DB%\MarkScan.psa
+REM #### END MarkScan.psa ####
+REM #### START SeaPlot.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\SeaPlot.psa
 echo ^<Sea_Plot ^> >>%PSA_1DB%\SeaPlot.psa
 echo ^<Version value="7.21h" /^> >>%PSA_1DB%\SeaPlot.psa
@@ -1499,11 +1323,25 @@ echo ^<DupCnt value="0" /^> >>%PSA_1DB%\SeaPlot.psa
 echo ^</Axis^> >>%PSA_1DB%\SeaPlot.psa
 echo ^</TS_PlotSetup^> >>%PSA_1DB%\SeaPlot.psa
 echo ^</Sea_Plot^> >>%PSA_1DB%\SeaPlot.psa
-
-REM ########################################################################
-
-
-REM ##############################Strip.psa#################################
+REM #### END SeaPlot.psa ####
+REM #### START Split.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\Split.psa
+echo ^<Split ^> >>%PSA_1DB%\Split.psa
+echo ^<Version value="7.21h" /^> >>%PSA_1DB%\Split.psa
+echo ^<ServerName value="Split" /^> >>%PSA_1DB%\Split.psa
+echo ^<InputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\Split.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\Split.psa
+echo ^<ArrayItem index="0" value="rv1203_001.cnv" /^> >>%PSA_1DB%\Split.psa
+echo ^</InputFileArray^> >>%PSA_1DB%\Split.psa
+echo ^<OutputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\Split.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\Split.psa
+echo ^<OutputFile value="rv1203_001.cnv" /^> >>%PSA_1DB%\Split.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\Split.psa
+echo ^<OutputFiles value="0" high="1" low="0" initialValue="0" /^> >>%PSA_1DB%\Split.psa
+echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\Split.psa
+echo ^</Split^> >>%PSA_1DB%\Split.psa
+REM #### END Split.psa ####
+REM #### START Strip.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\Strip.psa
 echo ^<Strip ^> >>%PSA_1DB%\Strip.psa
 echo ^<Version value="7.21h" /^> >>%PSA_1DB%\Strip.psa
@@ -1709,658 +1547,774 @@ echo ^<ArrayItem index="25" value="1" /^> >>%PSA_1DB%\Strip.psa
 echo ^<ArrayItem index="26" value="1" /^> >>%PSA_1DB%\Strip.psa
 echo ^</SelectArray^> >>%PSA_1DB%\Strip.psa
 echo ^</Strip^> >>%PSA_1DB%\Strip.psa
+REM #### END Strip.psa ####
+REM #### START Trans.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\Trans.psa
+echo ^<Translate ^> >>%PSA_1DB%\Trans.psa
+echo ^<Version value="7.21h" /^> >>%PSA_1DB%\Trans.psa
+echo ^<ServerName value="Translate" /^> >>%PSA_1DB%\Trans.psa
+echo ^<InputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\Trans.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\Trans.psa
+echo ^<ArrayItem index="0" value="rv1203_001.cnv" /^> >>%PSA_1DB%\Trans.psa
+echo ^</InputFileArray^> >>%PSA_1DB%\Trans.psa
+echo ^<OutputDir value="C:\Data\Cruises\ctd\gomecc2\1db\proc_data" /^> >>%PSA_1DB%\Trans.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\Trans.psa
+echo ^<OutputFile value="rv1203_001.cnv" /^> >>%PSA_1DB%\Trans.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\Trans.psa
+echo ^<Translation value="0" high="2" low="0" initialValue="0" /^> >>%PSA_1DB%\Trans.psa
+echo ^</Translate^> >>%PSA_1DB%\Trans.psa
+REM #### END Trans.psa ####
+REM #### START WildEdit.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\WildEdit.psa
+echo ^<Wild_Edit ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Version value="7.25.0.319" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ServerName value="Wild Edit" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<InputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</InputFileArray^> >>%PSA_1DB%\WildEdit.psa
+echo ^<OutputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<NameAppend value="" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<StdDevPassOne value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<StdDevPassTwo value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ScansPerBlock value="100" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<MinDelta value="0.005000" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArray Size="13" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="0" CalcID="17" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="31" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Depth [salt water, m]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Latitude value="0.000000" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="1" CalcID="65" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="2" CalcID="81" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="3" CalcID="81" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="4" CalcID="12" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="5" CalcID="12" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="6" CalcID="57" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="7" CalcID="57" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="8" CalcID="1" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="29" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Altimeter [m]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="9" CalcID="39" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="10" CalcID="40" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="11" CalcID="55" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="68" Ordinal="0" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Oxygen, SBE 43 [dov/dt]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^<CalcArrayItem index="12" CalcID="55" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Calc UnitID="68" Ordinal="1" ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<FullName value="Oxygen, SBE 43, 2 [dov/dt]" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1DB%\WildEdit.psa
+echo ^</CalcArray^> >>%PSA_1DB%\WildEdit.psa
+echo ^<SelectArray ^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="0" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="1" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="2" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="3" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="4" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="5" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="6" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="7" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="8" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="9" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="10" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="11" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="12" value="1" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^</SelectArray^> >>%PSA_1DB%\WildEdit.psa
+echo ^</Wild_Edit^> >>%PSA_1DB%\WildEdit.psa
+REM #### END WildEdit.psa ####
 
-REM ########################################################################
+REM #### COPY ABOVE THIS LINE ####
+
+
 
 REM # Generate 1hz files
+REM #### COPY BELOW THIS LINE ####
 
-REM #######################DatCnv.psa#######################################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> > %PSA_1HZ%\DatCnv.psa
-echo ^<Data_Conversion ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Version value="7.25.0.319" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ServerName value="Data Conversion" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<InstrumentPath value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\raw_data\ab1602_003.xmlcon" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<InstrumentMatch value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<InputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\raw_data" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ArrayItem index="0" value="ab1602_003.hex" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</InputFileArray^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<OutputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\1hz\proc_data" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<NameAppend value="" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<OutputFile value="ab1602_003.cnv" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ProcessScansToEnd value="1" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ScansToSkip value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ScansToProcess value="1" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<MergeHeaderFile value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<OutputFormat value="1" high="1" low="0" initialValue="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FromCast value="0" high="1" low="0" initialValue="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CreateFile value="0" high="2" low="0" initialValue="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ScanRangeSource value="3" high="3" low="0" initialValue="3" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ScanRangeOffset value="0.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ScanRangeDuration value="2.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<StartTimeOption value="1" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<PromptForNoteAndOrStartTime value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArray Size="16" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="0" CalcID="72" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="-1" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Scan Count" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="1" CalcID="84" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="27" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Julian Days" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="2" CalcID="84" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="52" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Time, Elapsed [seconds]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="3" CalcID="65" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="3" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Pressure, Digiquartz [db]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="4" CalcID="81" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="6" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="5" CalcID="81" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="6" Ordinal="1" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="6" CalcID="12" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="58" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Conductivity [S/m]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="7" CalcID="12" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="58" Ordinal="1" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Conductivity, 2 [S/m]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="8" CalcID="70" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="49" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Salinity, Practical [PSU]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="9" CalcID="70" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="49" Ordinal="1" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Salinity, Practical, 2 [PSU]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="10" CalcID="39" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Latitude [deg]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="11" CalcID="40" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Longitude [deg]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="12" CalcID="57" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="63" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="13" CalcID="57" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="63" Ordinal="1" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="14" CalcID="55" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="40" Ordinal="0" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Oxygen, SBE 43 [ml/l]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ApplyTauCorrection value="1" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<CalcArrayItem index="15" CalcID="55" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Calc UnitID="40" Ordinal="1" ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<FullName value="Oxygen, SBE 43, 2 [ml/l]" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ApplyTauCorrection value="1" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Calc^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</CalcArray^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<MiscellaneousDataForCalculations ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Latitude value="0.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Longitude value="0.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<DescentRateAndAcceleration ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</DescentRateAndAcceleration^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<Oxygen ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ApplyHysteresisCorrection value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ApplyTauCorrection value="1" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Oxygen^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<AverageSoundVelocity ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<MinimumPressure value="20.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<MinimumSalinity value="20.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<PressureWindowSize value="20.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<TimeWindowSize value="60.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</AverageSoundVelocity^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<PlumeAnomaly ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ThetaB value="0.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<SalinityB value="0.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ThetaZSalinityZRatio value="0.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<ReferencePressure value="0.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</PlumeAnomaly^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<PotentialTempAnomaly ^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<A0 value="0.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<A1 value="0.000000" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^<A1Multiplier value="0" /^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</PotentialTempAnomaly^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</MiscellaneousDataForCalculations^> >> %PSA_1HZ%\DatCnv.psa
-echo ^</Data_Conversion^> >> %PSA_1HZ%\DatCnv.psa
+REM #### START AlignCTD.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\AlignCTD.psa
+echo ^<Align_CTD ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Version value="7.25.0.319" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ServerName value="Align CTD" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<InputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<OutputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArray Size="12" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="0" CalcID="81" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="1" CalcID="81" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="2" CalcID="12" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="3" CalcID="12" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="4" CalcID="70" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="49" Ordinal="0" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Salinity, Practical [PSU]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="5" CalcID="70" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="49" Ordinal="1" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Salinity, Practical, 2 [PSU]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="6" CalcID="39" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="7" CalcID="40" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="8" CalcID="57" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="9" CalcID="57" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="10" CalcID="55" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="40" Ordinal="0" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Oxygen, SBE 43 [ml/l]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<CalcArrayItem index="11" CalcID="55" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Calc UnitID="40" Ordinal="1" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<FullName value="Oxygen, SBE 43, 2 [ml/l]" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Calc^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</CalcArray^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArray size="12" ^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="0" value="0.000000" variable_name="Temperature" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="1" value="0.000000" variable_name="Temperature" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="2" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="3" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="4" value="-0.040000" variable_name="Salinity, Practical" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="5" value="-0.040000" variable_name="Salinity, Practical" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="6" value="0.000000" variable_name="Latitude" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="7" value="0.000000" variable_name="Longitude" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="8" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="9" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="10" value="1.073000" variable_name="Oxygen, SBE 43" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="11" value="1.073000" variable_name="Oxygen, SBE 43" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</ValArray^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^</Align_CTD^> >>%PSA_1HZ%\AlignCTD.psa
+REM #### END AlignCTD.psa ####
+REM #### START BinAvg.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\BinAvg.psa
+echo ^<Bin_Average ^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<Version value="7.25.0.319" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<ServerName value="Bin Average" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<InputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<ArrayItem index="0" value="ab1602_005.cnv" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<OutputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<OutputFile value="ab1602_005.cnv" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<BinType value="4" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<BinSize value="1.000000" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<IncludeNumberScans value="0" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<ScansToSkip value="0" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<CastToProcess value="0" high="2" low="0" initialValue="0" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<IncludeSurfaceBin value="0" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<SurfaceBinMinVal value="0.000000" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<SurfaceBinMaxVal value="0.000000" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<SurfaceBinVal value="0.000000" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^</Bin_Average^> >>%PSA_1HZ%\BinAvg.psa
+REM #### END BinAvg.psa ####
+REM #### START CellTM.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\CellTM.psa
+echo ^<Cell_Thermal_Mass ^> >>%PSA_1HZ%\CellTM.psa
+echo ^<Version value="7.14c" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<ServerName value="Cell Thermal Mass" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<InputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\CellTM.psa
+echo ^<ArrayItem index="0" value="ab0709_000.cnv" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\CellTM.psa
+echo ^<OutputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<OutputFile value="ab0709_000.cnv" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<Primary ^> >>%PSA_1HZ%\CellTM.psa
+echo ^<Correct value="1" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<TempSensor value="0" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<TA_Amplitude value="0.030000" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<TA_TimeConstant value="7.000000" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^</Primary^> >>%PSA_1HZ%\CellTM.psa
+echo ^<Secondary ^> >>%PSA_1HZ%\CellTM.psa
+echo ^<Correct value="1" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<TempSensor value="1" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<TA_Amplitude value="0.030000" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^<TA_TimeConstant value="7.000000" /^> >>%PSA_1HZ%\CellTM.psa
+echo ^</Secondary^> >>%PSA_1HZ%\CellTM.psa
+echo ^</Cell_Thermal_Mass^> >>%PSA_1HZ%\CellTM.psa
+REM #### END CellTM.psa ####
+REM #### START DatCnv.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\DatCnv.psa
+echo ^<Data_Conversion ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Version value="7.25.0.319" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ServerName value="Data Conversion" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<InstrumentPath value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\raw_data\ab1602_003.xmlcon" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<InstrumentMatch value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<InputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\raw_data" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ArrayItem index="0" value="ab1602_003.hex" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<OutputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<OutputFile value="ab1602_003.cnv" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ProcessScansToEnd value="1" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ScansToSkip value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ScansToProcess value="1" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<MergeHeaderFile value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<OutputFormat value="1" high="1" low="0" initialValue="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FromCast value="0" high="1" low="0" initialValue="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CreateFile value="0" high="2" low="0" initialValue="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ScanRangeSource value="3" high="3" low="0" initialValue="3" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ScanRangeOffset value="0.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ScanRangeDuration value="2.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<StartTimeOption value="1" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<PromptForNoteAndOrStartTime value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArray Size="16" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="0" CalcID="72" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="-1" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Scan Count" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="1" CalcID="84" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="27" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Julian Days" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="2" CalcID="84" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="52" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Time, Elapsed [seconds]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="3" CalcID="65" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="4" CalcID="81" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="5" CalcID="81" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="6" CalcID="12" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="7" CalcID="12" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="8" CalcID="70" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="49" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Salinity, Practical [PSU]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="9" CalcID="70" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="49" Ordinal="1" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Salinity, Practical, 2 [PSU]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="10" CalcID="39" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="11" CalcID="40" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="12" CalcID="57" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="13" CalcID="57" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="14" CalcID="55" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="40" Ordinal="0" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Oxygen, SBE 43 [ml/l]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<CalcArrayItem index="15" CalcID="55" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Calc UnitID="40" Ordinal="1" ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<FullName value="Oxygen, SBE 43, 2 [ml/l]" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Calc^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</CalcArray^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<MiscellaneousDataForCalculations ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Latitude value="0.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Longitude value="0.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<DescentRateAndAcceleration ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</DescentRateAndAcceleration^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<Oxygen ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ApplyHysteresisCorrection value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Oxygen^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<AverageSoundVelocity ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<MinimumPressure value="20.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<MinimumSalinity value="20.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<PressureWindowSize value="20.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<TimeWindowSize value="60.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</AverageSoundVelocity^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<PlumeAnomaly ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ThetaB value="0.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<SalinityB value="0.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ThetaZSalinityZRatio value="0.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<ReferencePressure value="0.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</PlumeAnomaly^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<PotentialTempAnomaly ^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<A0 value="0.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<A1 value="0.000000" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^<A1Multiplier value="0" /^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</PotentialTempAnomaly^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</MiscellaneousDataForCalculations^> >>%PSA_1HZ%\DatCnv.psa
+echo ^</Data_Conversion^> >>%PSA_1HZ%\DatCnv.psa
+REM #### END DatCnv.psa ####
+REM #### START Derive1.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\Derive1.psa
+echo ^<Derive ^> >>%PSA_1HZ%\Derive1.psa
+echo ^<Version value="7.16a" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^<ServerName value="Derive" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^<InstrumentPath value="C:\DATA\AB0804\ADCP\raw_data\AB0804_001_009.CON" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^<InstrumentMatch value="0" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^<InputDir value="C:\DATA\AB0804\ADCP\proc_data_pcor" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\Derive1.psa
+echo ^<ArrayItem index="0" value="ab0804_001.cnv" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\Derive1.psa
+echo ^<OutputDir value="C:\DATA\AB0804\ADCP\proc_data_pcor" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^<OutputFile value="AB0804_001.cnv" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^<CalcArray Size="2" ^> >>%PSA_1HZ%\Derive1.psa
+echo ^<CalcArrayItem index="0" CalcID="70" ^> >>%PSA_1HZ%\Derive1.psa
+echo ^<Calc UnitID="49" Ordinal="0" ^> >>%PSA_1HZ%\Derive1.psa
+echo ^<FullName value="Salinity [PSU]" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^</Calc^> >>%PSA_1HZ%\Derive1.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Derive1.psa
+echo ^<CalcArrayItem index="1" CalcID="70" ^> >>%PSA_1HZ%\Derive1.psa
+echo ^<Calc UnitID="49" Ordinal="1" ^> >>%PSA_1HZ%\Derive1.psa
+echo ^<FullName value="Salinity, 2 [PSU]" /^> >>%PSA_1HZ%\Derive1.psa
+echo ^</Calc^> >>%PSA_1HZ%\Derive1.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Derive1.psa
+echo ^</CalcArray^> >>%PSA_1HZ%\Derive1.psa
+echo ^</Derive^> >>%PSA_1HZ%\Derive1.psa
+REM #### END Derive1.psa ####
+REM #### START Filter.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\Filter.psa
+echo ^<Filter ^> >>%PSA_1HZ%\Filter.psa
+echo ^<Version value="7.14c" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<ServerName value="Filter" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<InputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<ArrayItem index="0" value="ab0709_000.cnv" /^> >>%PSA_1HZ%\Filter.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\Filter.psa
+echo ^<OutputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<OutputFile value="ab0709_000.cnv" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<TimeConstFilterA value="0.030000" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<TimeConstFilterB value="0.150000" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<CalcArray Size="5" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<CalcArrayItem index="0" CalcID="65" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>%PSA_1HZ%\Filter.psa
+echo ^</Calc^> >>%PSA_1HZ%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Filter.psa
+echo ^<CalcArrayItem index="1" CalcID="81" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1HZ%\Filter.psa
+echo ^</Calc^> >>%PSA_1HZ%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Filter.psa
+echo ^<CalcArrayItem index="2" CalcID="81" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1HZ%\Filter.psa
+echo ^</Calc^> >>%PSA_1HZ%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Filter.psa
+echo ^<CalcArrayItem index="3" CalcID="12" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1HZ%\Filter.psa
+echo ^</Calc^> >>%PSA_1HZ%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Filter.psa
+echo ^<CalcArrayItem index="4" CalcID="12" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1HZ%\Filter.psa
+echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1HZ%\Filter.psa
+echo ^</Calc^> >>%PSA_1HZ%\Filter.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Filter.psa
+echo ^</CalcArray^> >>%PSA_1HZ%\Filter.psa
+echo ^<FilterTypeArray ^> >>%PSA_1HZ%\Filter.psa
+echo ^<ArrayItem index="0" value="2" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<ArrayItem index="1" value="1" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<ArrayItem index="2" value="1" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<ArrayItem index="3" value="1" /^> >>%PSA_1HZ%\Filter.psa
+echo ^<ArrayItem index="4" value="1" /^> >>%PSA_1HZ%\Filter.psa
+echo ^</FilterTypeArray^> >>%PSA_1HZ%\Filter.psa
+echo ^</Filter^> >>%PSA_1HZ%\Filter.psa
+REM #### END Filter.psa ####
+REM #### START Strip.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\Strip.psa
+echo ^<Strip ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Version value="7.23.1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ServerName value="Strip" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<InputDir value="J:\ab1602\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="0" value="ab1602_001.cnv" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\Strip.psa
+echo ^<OutputDir value="J:\ab1602\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<OutputFile value="ab1602_001.cnv" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArray Size="16" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="0" CalcID="72" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="-1" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Scan Count" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="1" CalcID="84" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="27" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Julian Days" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="2" CalcID="84" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="52" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Time, Elapsed [seconds]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="3" CalcID="65" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="4" CalcID="81" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="5" CalcID="81" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="6" CalcID="12" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="7" CalcID="12" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="8" CalcID="70" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="49" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Salinity, Practical [PSU]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="9" CalcID="70" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="49" Ordinal="1" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Salinity, Practical, 2 [PSU]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="10" CalcID="39" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="11" CalcID="40" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="12" CalcID="57" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="13" CalcID="57" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="14" CalcID="55" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="40" Ordinal="0" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Oxygen, SBE 43 [ml/l]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^<CalcArrayItem index="15" CalcID="55" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<Calc UnitID="40" Ordinal="1" ^> >>%PSA_1HZ%\Strip.psa
+echo ^<FullName value="Oxygen, SBE 43, 2 [ml/l]" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</Calc^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Strip.psa
+echo ^</CalcArray^> >>%PSA_1HZ%\Strip.psa
+echo ^<SelectArray ^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="0" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="1" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="2" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="3" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="4" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="5" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="6" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="7" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="8" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="9" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="10" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="11" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="12" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="13" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="14" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^<ArrayItem index="15" value="1" /^> >>%PSA_1HZ%\Strip.psa
+echo ^</SelectArray^> >>%PSA_1HZ%\Strip.psa
+echo ^</Strip^> >>%PSA_1HZ%\Strip.psa
+REM #### END Strip.psa ####
+REM #### START Trans.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\Trans.psa
+echo ^<Translate ^> >>%PSA_1HZ%\Trans.psa
+echo ^<Version value="7.14c" /^> >>%PSA_1HZ%\Trans.psa
+echo ^<ServerName value="Translate" /^> >>%PSA_1HZ%\Trans.psa
+echo ^<InputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >>%PSA_1HZ%\Trans.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\Trans.psa
+echo ^<ArrayItem index="0" value="ab0709_000.cnv" /^> >>%PSA_1HZ%\Trans.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\Trans.psa
+echo ^<OutputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >>%PSA_1HZ%\Trans.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\Trans.psa
+echo ^<OutputFile value="ab0709_000.cnv" /^> >>%PSA_1HZ%\Trans.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\Trans.psa
+echo ^<Translation value="0" high="2" low="0" initialValue="0" /^> >>%PSA_1HZ%\Trans.psa
+echo ^</Translate^> >>%PSA_1HZ%\Trans.psa
+REM #### END Trans.psa ####
+REM #### START WildEdit.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\WildEdit.psa
+echo ^<Wild_Edit ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Version value="7.25.0.319" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ServerName value="Wild Edit" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<InputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<OutputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<StdDevPassOne value="2.000000" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<StdDevPassTwo value="2.000000" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ScansPerBlock value="100" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<MinDelta value="0.005000" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ExcludeMarkedBad value="0" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArray Size="13" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="0" CalcID="65" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Pressure, Digiquartz [db]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="1" CalcID="81" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="6" Ordinal="0" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="2" CalcID="81" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="6" Ordinal="1" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="3" CalcID="12" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="58" Ordinal="0" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Conductivity [S/m]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="4" CalcID="12" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="58" Ordinal="1" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Conductivity, 2 [S/m]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="5" CalcID="70" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="49" Ordinal="0" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Salinity, Practical [PSU]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="6" CalcID="70" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="49" Ordinal="1" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Salinity, Practical, 2 [PSU]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="7" CalcID="39" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Latitude [deg]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="8" CalcID="40" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="4" Ordinal="0" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Longitude [deg]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="9" CalcID="57" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="63" Ordinal="0" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="10" CalcID="57" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="63" Ordinal="1" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="11" CalcID="55" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="40" Ordinal="0" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Oxygen, SBE 43 [ml/l]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<CalcArrayItem index="12" CalcID="55" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Calc UnitID="40" Ordinal="1" ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<FullName value="Oxygen, SBE 43, 2 [ml/l]" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<WindowSize value="2.000000" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ApplyHysteresisCorrection value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ApplyTauCorrection value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Calc^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</CalcArray^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<SelectArray ^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="0" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="1" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="2" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="3" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="4" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="5" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="6" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="7" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="8" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="9" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="10" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="11" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="12" value="1" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</SelectArray^> >>%PSA_1HZ%\WildEdit.psa
+echo ^</Wild_Edit^> >>%PSA_1HZ%\WildEdit.psa
+REM #### END WildEdit.psa ####
 
-REM ########################################################################
+REM #### COPY ABOVE THIS LINE ####
 
 
-REM ########################AlignCTD.psa####################################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> > %PSA_1HZ%\AlignCTD.psa
-echo ^<Align_CTD ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Version value="7.25.0.319" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ServerName value="Align CTD" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<InputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</InputFileArray^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<OutputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<NameAppend value="" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<OutputFile value="ab1705_015.cnv" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArray Size="12" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="0" CalcID="81" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="6" Ordinal="0" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="1" CalcID="81" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="6" Ordinal="1" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="2" CalcID="12" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="58" Ordinal="0" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Conductivity [S/m]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="3" CalcID="12" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="58" Ordinal="1" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Conductivity, 2 [S/m]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="4" CalcID="70" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="49" Ordinal="0" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Salinity, Practical [PSU]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="5" CalcID="70" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="49" Ordinal="1" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Salinity, Practical, 2 [PSU]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="6" CalcID="39" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Latitude [deg]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="7" CalcID="40" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Longitude [deg]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="8" CalcID="57" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="63" Ordinal="0" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="9" CalcID="57" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="63" Ordinal="1" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="10" CalcID="55" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="40" Ordinal="0" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Oxygen, SBE 43 [ml/l]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ApplyTauCorrection value="1" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<CalcArrayItem index="11" CalcID="55" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<Calc UnitID="40" Ordinal="1" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<FullName value="Oxygen, SBE 43, 2 [ml/l]" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ApplyTauCorrection value="1" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Calc^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</CalcArray^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArray size="12" ^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="0" value="0.000000" variable_name="Temperature" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="1" value="0.000000" variable_name="Temperature" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="2" value="-0.040000" variable_name="Conductivity" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="3" value="-0.040000" variable_name="Conductivity" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="4" value="-0.040000" variable_name="Salinity, Practical" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="5" value="-0.040000" variable_name="Salinity, Practical" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="6" value="0.000000" variable_name="Latitude" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="7" value="0.000000" variable_name="Longitude" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="8" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="9" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="10" value="1.073000" variable_name="Oxygen, SBE 43" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="11" value="1.073000" variable_name="Oxygen, SBE 43" /^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</ValArray^> >> %PSA_1HZ%\AlignCTD.psa
-echo ^</Align_CTD^> >> %PSA_1HZ%\AlignCTD.psa
-
-REM ########################################################################
-
-REM #################################WildEdit.psa###########################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> > %PSA_1HZ%\WildEdit.psa
-echo ^<Wild_Edit ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Version value="7.25.0.319" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ServerName value="Wild Edit" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<InputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</InputFileArray^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<OutputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<NameAppend value="" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<OutputFile value="ab1705_015.cnv" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<StdDevPassOne value="2.000000" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<StdDevPassTwo value="2.000000" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ScansPerBlock value="100" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<MinDelta value="0.005000" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ExcludeMarkedBad value="0" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArray Size="13" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="0" CalcID="65" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="3" Ordinal="0" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Pressure, Digiquartz [db]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="1" CalcID="81" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="6" Ordinal="0" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="2" CalcID="81" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="6" Ordinal="1" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="3" CalcID="12" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="58" Ordinal="0" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Conductivity [S/m]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="4" CalcID="12" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="58" Ordinal="1" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Conductivity, 2 [S/m]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="5" CalcID="70" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="49" Ordinal="0" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Salinity, Practical [PSU]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="6" CalcID="70" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="49" Ordinal="1" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Salinity, Practical, 2 [PSU]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="7" CalcID="39" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Latitude [deg]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="8" CalcID="40" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Longitude [deg]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="9" CalcID="57" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="63" Ordinal="0" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="10" CalcID="57" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="63" Ordinal="1" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="11" CalcID="55" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="40" Ordinal="0" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Oxygen, SBE 43 [ml/l]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ApplyTauCorrection value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<CalcArrayItem index="12" CalcID="55" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<Calc UnitID="40" Ordinal="1" ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<FullName value="Oxygen, SBE 43, 2 [ml/l]" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ApplyTauCorrection value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Calc^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</CalcArray^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<SelectArray ^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="0" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="1" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="2" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="3" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="4" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="5" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="6" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="7" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="8" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="9" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="10" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="11" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="12" value="1" /^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</SelectArray^> >> %PSA_1HZ%\WildEdit.psa
-echo ^</Wild_Edit^> >> %PSA_1HZ%\WildEdit.psa
-
-REM ########################################################################
-
-REM ############################Filter.psa##################################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> > %PSA_1HZ%\Filter.psa
-echo ^<Filter ^> >> %PSA_1HZ%\Filter.psa
-echo ^<Version value="7.14c" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<ServerName value="Filter" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<InputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<ArrayItem index="0" value="ab0709_000.cnv" /^> >> %PSA_1HZ%\Filter.psa
-echo ^</InputFileArray^> >> %PSA_1HZ%\Filter.psa
-echo ^<OutputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<NameAppend value="" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<OutputFile value="ab0709_000.cnv" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<TimeConstFilterA value="0.030000" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<TimeConstFilterB value="0.150000" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<CalcArray Size="5" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<CalcArrayItem index="0" CalcID="65" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<Calc UnitID="3" Ordinal="0" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<FullName value="Pressure, Digiquartz [db]" /^> >> %PSA_1HZ%\Filter.psa
-echo ^</Calc^> >> %PSA_1HZ%\Filter.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Filter.psa
-echo ^<CalcArrayItem index="1" CalcID="81" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<Calc UnitID="6" Ordinal="0" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >> %PSA_1HZ%\Filter.psa
-echo ^</Calc^> >> %PSA_1HZ%\Filter.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Filter.psa
-echo ^<CalcArrayItem index="2" CalcID="81" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<Calc UnitID="6" Ordinal="1" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >> %PSA_1HZ%\Filter.psa
-echo ^</Calc^> >> %PSA_1HZ%\Filter.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Filter.psa
-echo ^<CalcArrayItem index="3" CalcID="12" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<Calc UnitID="58" Ordinal="0" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<FullName value="Conductivity [S/m]" /^> >> %PSA_1HZ%\Filter.psa
-echo ^</Calc^> >> %PSA_1HZ%\Filter.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Filter.psa
-echo ^<CalcArrayItem index="4" CalcID="12" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<Calc UnitID="58" Ordinal="1" ^> >> %PSA_1HZ%\Filter.psa
-echo ^<FullName value="Conductivity, 2 [S/m]" /^> >> %PSA_1HZ%\Filter.psa
-echo ^</Calc^> >> %PSA_1HZ%\Filter.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Filter.psa
-echo ^</CalcArray^> >> %PSA_1HZ%\Filter.psa
-echo ^<FilterTypeArray ^> >> %PSA_1HZ%\Filter.psa
-echo ^<ArrayItem index="0" value="2" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<ArrayItem index="1" value="1" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<ArrayItem index="2" value="1" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<ArrayItem index="3" value="1" /^> >> %PSA_1HZ%\Filter.psa
-echo ^<ArrayItem index="4" value="1" /^> >> %PSA_1HZ%\Filter.psa
-echo ^</FilterTypeArray^> >> %PSA_1HZ%\Filter.psa
-echo ^</Filter^> >> %PSA_1HZ%\Filter.psa
-
-REM ########################################################################
-
-REM ############################CellTM.psa##################################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> > %PSA_1HZ%\CellTM.psa
-echo ^<Cell_Thermal_Mass ^> >> %PSA_1HZ%\CellTM.psa
-echo ^<Version value="7.14c" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<ServerName value="Cell Thermal Mass" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<InputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >> %PSA_1HZ%\CellTM.psa
-echo ^<ArrayItem index="0" value="ab0709_000.cnv" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^</InputFileArray^> >> %PSA_1HZ%\CellTM.psa
-echo ^<OutputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<NameAppend value="" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<OutputFile value="ab0709_000.cnv" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<Primary ^> >> %PSA_1HZ%\CellTM.psa
-echo ^<Correct value="1" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<TempSensor value="0" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<TA_Amplitude value="0.030000" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<TA_TimeConstant value="7.000000" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^</Primary^> >> %PSA_1HZ%\CellTM.psa
-echo ^<Secondary ^> >> %PSA_1HZ%\CellTM.psa
-echo ^<Correct value="1" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<TempSensor value="1" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<TA_Amplitude value="0.030000" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^<TA_TimeConstant value="7.000000" /^> >> %PSA_1HZ%\CellTM.psa
-echo ^</Secondary^> >> %PSA_1HZ%\CellTM.psa
-echo ^</Cell_Thermal_Mass^> >> %PSA_1HZ%\CellTM.psa
-
-REM ########################################################################
-
-REM ##################################BinAvg.psa############################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> > %PSA_1HZ%\BinAvg.psa
-echo ^<Bin_Average ^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<Version value="7.25.0.319" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<ServerName value="Bin Average" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<InputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\1hz\proc_data" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<ArrayItem index="0" value="ab1602_005.cnv" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^</InputFileArray^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<OutputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\1hz\proc_data" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<NameAppend value="" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<OutputFile value="ab1602_005.cnv" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<BinType value="4" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<BinSize value="1.000000" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<IncludeNumberScans value="0" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<ExcludeMarkedBad value="1" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<ScansToSkip value="0" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<CastToProcess value="0" high="2" low="0" initialValue="0" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<IncludeSurfaceBin value="0" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<SurfaceBinMinVal value="0.000000" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<SurfaceBinMaxVal value="0.000000" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^<SurfaceBinVal value="0.000000" /^> >> %PSA_1HZ%\BinAvg.psa
-echo ^</Bin_Average^> >> %PSA_1HZ%\BinAvg.psa
-
-REM ########################################################################
-
-REM ##########################Trans.psa#####################################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> > %PSA_1HZ%\Trans.psa
-echo ^<Translate ^> >> %PSA_1HZ%\Trans.psa
-echo ^<Version value="7.14c" /^> >> %PSA_1HZ%\Trans.psa
-echo ^<ServerName value="Translate" /^> >> %PSA_1HZ%\Trans.psa
-echo ^<InputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >> %PSA_1HZ%\Trans.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >> %PSA_1HZ%\Trans.psa
-echo ^<ArrayItem index="0" value="ab0709_000.cnv" /^> >> %PSA_1HZ%\Trans.psa
-echo ^</InputFileArray^> >> %PSA_1HZ%\Trans.psa
-echo ^<OutputDir value="C:\DATA\AB0709\ADCP\proc_data" /^> >> %PSA_1HZ%\Trans.psa
-echo ^<NameAppend value="" /^> >> %PSA_1HZ%\Trans.psa
-echo ^<OutputFile value="ab0709_000.cnv" /^> >> %PSA_1HZ%\Trans.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1HZ%\Trans.psa
-echo ^<Translation value="0" high="2" low="0" initialValue="0" /^> >> %PSA_1HZ%\Trans.psa
-echo ^</Translate^> >> %PSA_1HZ%\Trans.psa
-
-REM ########################################################################
-
-
-REM ##################################Derive.psa############################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> > %PSA_1HZ%\Derive.psa
-echo ^<Derive ^> >> %PSA_1HZ%\Derive.psa
-echo ^<Version value="7.16a" /^> >> %PSA_1HZ%\Derive.psa
-echo ^<ServerName value="Derive" /^> >> %PSA_1HZ%\Derive.psa
-echo ^<InstrumentPath value="C:\DATA\AB0804\ADCP\raw_data\AB0804_001_009.CON" /^> >> %PSA_1HZ%\Derive.psa
-echo ^<InstrumentMatch value="0" /^> >> %PSA_1HZ%\Derive.psa
-echo ^<InputDir value="C:\DATA\AB0804\ADCP\proc_data_pcor" /^> >> %PSA_1HZ%\Derive.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >> %PSA_1HZ%\Derive.psa
-echo ^<ArrayItem index="0" value="ab0804_001.cnv" /^> >> %PSA_1HZ%\Derive.psa
-echo ^</InputFileArray^> >> %PSA_1HZ%\Derive.psa
-echo ^<OutputDir value="C:\DATA\AB0804\ADCP\proc_data_pcor" /^> >> %PSA_1HZ%\Derive.psa
-echo ^<NameAppend value="" /^> >> %PSA_1HZ%\Derive.psa
-echo ^<OutputFile value="AB0804_001.cnv" /^> >> %PSA_1HZ%\Derive.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1HZ%\Derive.psa
-echo ^<CalcArray Size="2" ^> >> %PSA_1HZ%\Derive.psa
-echo ^<CalcArrayItem index="0" CalcID="70" ^> >> %PSA_1HZ%\Derive.psa
-echo ^<Calc UnitID="49" Ordinal="0" ^> >> %PSA_1HZ%\Derive.psa
-echo ^<FullName value="Salinity [PSU]" /^> >> %PSA_1HZ%\Derive.psa
-echo ^</Calc^> >> %PSA_1HZ%\Derive.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Derive.psa
-echo ^<CalcArrayItem index="1" CalcID="70" ^> >> %PSA_1HZ%\Derive.psa
-echo ^<Calc UnitID="49" Ordinal="1" ^> >> %PSA_1HZ%\Derive.psa
-echo ^<FullName value="Salinity, 2 [PSU]" /^> >> %PSA_1HZ%\Derive.psa
-echo ^</Calc^> >> %PSA_1HZ%\Derive.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Derive.psa
-echo ^</CalcArray^> >> %PSA_1HZ%\Derive.psa
-echo ^</Derive^> >> %PSA_1HZ%\Derive.psa
-
-REM ########################################################################
-
-REM ###################################Strip.psa############################
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >> %PSA_1HZ%\Strip.psa
-echo ^<Strip ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Version value="7.23.1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ServerName value="Strip" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<InputDir value="J:\ab1602\sbe_ctd\1hz\proc_data" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="0" value="ab1602_001.cnv" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</InputFileArray^> >> %PSA_1HZ%\Strip.psa
-echo ^<OutputDir value="J:\ab1602\sbe_ctd\1hz\proc_data" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<NameAppend value="" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<OutputFile value="ab1602_001.cnv" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<LastProcessed value="0" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArray Size="16" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="0" CalcID="72" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="-1" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Scan Count" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="1" CalcID="84" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="27" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Julian Days" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="2" CalcID="84" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="52" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Time, Elapsed [seconds]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="3" CalcID="65" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="3" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Pressure, Digiquartz [db]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="4" CalcID="81" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="6" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Temperature [ITS-90, deg C]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="5" CalcID="81" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="6" Ordinal="1" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Temperature, 2 [ITS-90, deg C]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="6" CalcID="12" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="58" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Conductivity [S/m]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="7" CalcID="12" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="58" Ordinal="1" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Conductivity, 2 [S/m]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="8" CalcID="70" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="49" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Salinity, Practical [PSU]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="9" CalcID="70" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="49" Ordinal="1" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Salinity, Practical, 2 [PSU]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="10" CalcID="39" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Latitude [deg]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="11" CalcID="40" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="4" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Longitude [deg]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="12" CalcID="57" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="63" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Oxygen raw, SBE 43 [V]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="13" CalcID="57" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="63" Ordinal="1" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Oxygen raw, SBE 43, 2 [V]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="14" CalcID="55" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="40" Ordinal="0" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Oxygen, SBE 43 [ml/l]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ApplyTauCorrection value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^<CalcArrayItem index="15" CalcID="55" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<Calc UnitID="40" Ordinal="1" ^> >> %PSA_1HZ%\Strip.psa
-echo ^<FullName value="Oxygen, SBE 43, 2 [ml/l]" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<WindowSize value="2.000000" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ApplyHysteresisCorrection value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ApplyTauCorrection value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</Calc^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArrayItem^> >> %PSA_1HZ%\Strip.psa
-echo ^</CalcArray^> >> %PSA_1HZ%\Strip.psa
-echo ^<SelectArray ^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="0" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="1" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="2" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="3" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="4" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="5" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="6" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="7" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="8" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="9" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="10" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="11" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="12" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="13" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="14" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^<ArrayItem index="15" value="1" /^> >> %PSA_1HZ%\Strip.psa
-echo ^</SelectArray^> >> %PSA_1HZ%\Strip.psa
-echo ^</Strip^> >> %PSA_1HZ%\Strip.psa
-
-REM ########################################################################
 REM ###########################config.bat###################################
 echo @echo off > %SBEBATCH_DIR%\config.bat
 echo SET BASE_DIR=%BASE_DIR%>> %SBEBATCH_DIR%\config.bat
