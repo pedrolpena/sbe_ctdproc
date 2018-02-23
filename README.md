@@ -150,8 +150,8 @@ These scripts would be very difficult for me to write as Batch scripts.<br>
 Make the scripts executable.<br>
 
 ```bash
-chmod +x psa_1db_2nix<br>
-chmod +x psa_1hz_2nix<br>
+chmod +x psa_1db_2nix
+chmod +x psa_1hz_2nix
 ```
 Run the scripts<br>
 
