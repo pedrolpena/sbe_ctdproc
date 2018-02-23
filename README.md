@@ -175,7 +175,7 @@ options available with the SBE batch scripting.<br>
 
 Below is the BASH version of process_ctd. you can use standard BASH to manipulate the creation of the "sbe_batch.dat" file.<br>
 The same can be done with the BATCH version for Windows.<br>
-
+```bash
 #!/bin/bash<br>
 #Edit this file to setup ctd processing using wine.<br>
 
@@ -270,7 +270,7 @@ wine "$SBE_DIR"/SBEBatch.exe \<br>
       "$PSA_1DB"  \<br>
       "$PSA_1HZ" \<br>
       "$BOTTLE_DIR"<br>
-
+```      
 
 
 
