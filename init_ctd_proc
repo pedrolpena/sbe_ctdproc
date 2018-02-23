@@ -2379,9 +2379,10 @@ echo '########################################################################' 
 #######################process_ctd#####################################
 echo '#!/bin/bash' > "$SBEBATCH_DIR"/process_ctd
 echo '# Edit this file to setup ctd processing using wine.' >> "$SBEBATCH_DIR"/process_ctd
+echo 'SBEBATCH_DIR="'"$SBEBATCH_DIR"'"' >> "$SBEBATCH_DIR"/process_ctd
 echo '' >> "$SBEBATCH_DIR"/process_ctd
 echo '# This line brings in the variable values' >> "$SBEBATCH_DIR"/process_ctd
-echo 'source config.cfg' >> "$SBEBATCH_DIR"/process_ctd
+echo 'source "$SBEBATCH_DIR"/config.cfg' >> "$SBEBATCH_DIR"/process_ctd
 echo '' >> "$SBEBATCH_DIR"/process_ctd
 
 echo 'echo "Checking for SBEBatch.exe in $SBE_DIR"' >> "$SBEBATCH_DIR"/process_ctd

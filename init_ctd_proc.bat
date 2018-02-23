@@ -2394,7 +2394,8 @@ echo SET _EXITSTATUS=0>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo REM # Edit this file to setup ctd processing.>> %SBEBATCH_DIR%\process_ctd.bat
 echo REM # This line brings in the variable values>> %SBEBATCH_DIR%\process_ctd.bat
-echo CALL config.bat>> %SBEBATCH_DIR%\process_ctd.bat
+echo SET SBEBATCH_DIR=%SBEBATCH_DIR%>> %SBEBATCH_DIR%\process_ctd.bat
+echo CALL %%SBEBATCH_DIR%%\config.bat>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo.>> %SBEBATCH_DIR%\process_ctd.bat
 echo SET TEMP=Checking for SBEBatch.exe in %%SBE_DIR%%>> %SBEBATCH_DIR%\process_ctd.bat
