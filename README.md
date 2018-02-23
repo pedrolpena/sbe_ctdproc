@@ -177,9 +177,9 @@ Below is the BASH version of process_ctd. you can use standard BASH to manipulat
 The same can be done with the BATCH version for Windows.<br>
 
 #!/bin/bash<br>
-[# Edit this file to setup ctd processing using wine.]<br>
+#Edit this file to setup ctd processing using wine.<br>
 
-# This line brings in the variable values<br>
+#This line brings in the variable values<br>
 source config.cfg<br>
 
 echo "Checking for SBEBatch.exe in $SBE_DIR"<br>
@@ -206,12 +206,12 @@ else<br>
    echo "Found SBEBatch.exe!"<br>
 fi<br>
 echo ""<br>
-[########################################################################]<br>
-[# The basename that will be used to assemble the filenames needed.     #]<br>
-[# This corresponds to %2 in the sbe_batch.dat script.                  #]<br>
-[#                                                                      #]<br>
+########################################################################<br>
+#The basename that will be used to assemble the filenames needed.     #<br>
+#This corresponds to %2 in the sbe_batch.dat script.                  #<br>
+#                                                                      #<br>
 BASENAME="$CRUISE_ID"_"$1"<br>
-[########################################################################]<br>
+########################################################################<br>
 <br>
 echo "@ %1 Path to the raw data files." > $BATCH_FILE<br>
 echo "@ %2 Basename used to create the filenames." >> $BATCH_FILE<br>
@@ -256,10 +256,10 @@ echo "binavg      /i%4/%2.cnv   /p%6/BinAvg.psa      /f%2.cnv /o%4" >> $BATCH_FI
 echo "trans       /i%4/%2.cnv   /p%6/Trans.psa       /f%2.cnv /o%4" >> $BATCH_FILE<br>
 
 
-# wine is used to run the SBEBatch.exe program that will do the <br>
-# processing. Seven arguments are passed to the sbe_batch.dat script.<br>
-# this order is important. If the order is changed, make sure to make<br>
-# the changes in the sbe_batch file.<br>
+#wine is used to run the SBEBatch.exe program that will do the <br>
+#processing. Seven arguments are passed to the sbe_batch.dat script.<br>
+#this order is important. If the order is changed, make sure to make<br>
+#the changes in the sbe_batch file.<br>
 
 wine "$SBE_DIR"/SBEBatch.exe \<br>
      "$BATCH_FILE" \<br>
