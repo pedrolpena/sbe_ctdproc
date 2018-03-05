@@ -134,15 +134,15 @@ REM #### COPY BELOW THIS LINE ####
 REM #### START AlignCTD.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\AlignCTD.psa
 echo ^<Align_CTD ^> >>%PSA_1DB%\AlignCTD.psa
-echo ^<Version value="7.25.0.319" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<Version value="7.23.2" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<ServerName value="Align CTD" /^> >>%PSA_1DB%\AlignCTD.psa
-echo ^<InputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<InputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1db" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\AlignCTD.psa
-echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ArrayItem index="0" value="ab1802_000.cnv" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^</InputFileArray^> >>%PSA_1DB%\AlignCTD.psa
-echo ^<OutputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<OutputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1db" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<NameAppend value="" /^> >>%PSA_1DB%\AlignCTD.psa
-echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<OutputFile value="ab1802_000.cnv" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<CalcArray Size="11" ^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<CalcArrayItem index="0" CalcID="81" ^> >>%PSA_1DB%\AlignCTD.psa
@@ -212,8 +212,8 @@ echo ^</CalcArray^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<ValArray size="11" ^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<ValArrayItem index="0" value="0.000000" variable_name="Temperature" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<ValArrayItem index="1" value="0.000000" variable_name="Temperature" /^> >>%PSA_1DB%\AlignCTD.psa
-echo ^<ValArrayItem index="2" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1DB%\AlignCTD.psa
-echo ^<ValArrayItem index="3" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="2" value="0.000000" variable_name="Conductivity" /^> >>%PSA_1DB%\AlignCTD.psa
+echo ^<ValArrayItem index="3" value="0.000000" variable_name="Conductivity" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<ValArrayItem index="4" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<ValArrayItem index="5" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >>%PSA_1DB%\AlignCTD.psa
 echo ^<ValArrayItem index="6" value="0.000000" variable_name="Altimeter" /^> >>%PSA_1DB%\AlignCTD.psa
@@ -227,21 +227,24 @@ REM #### END AlignCTD.psa ####
 REM #### START BinAvg.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\BinAvg.psa
 echo ^<Bin_Average ^> >>%PSA_1DB%\BinAvg.psa
-echo ^<Version value="7.21k" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<Version value="7.26.7.114" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<ServerName value="Bin Average" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<InputDir value="J:\ab1602\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<InputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1db" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\BinAvg.psa
-echo ^<ArrayItem index="0" value="ab1602_028.cnv" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<ArrayItem index="0" value="ab1802_012.cnv" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^</InputFileArray^> >>%PSA_1DB%\BinAvg.psa
-echo ^<OutputDir value="J:\ab1602\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<OutputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1db" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<NameAppend value="" /^> >>%PSA_1DB%\BinAvg.psa
-echo ^<OutputFile value="ab1602_028.cnv" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<OutputFile value="ab1802_012.cnv" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<BinType value="0" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<BinSize value="1.000000" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<IncludeNumberScans value="1" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<ScansToSkip value="0" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<ScansToOmit value="0" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<MinScansPerBin value="30" /^> >>%PSA_1DB%\BinAvg.psa
+echo ^<MaxScansPerBin value="90" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<CastToProcess value="0" high="2" low="0" initialValue="0" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<IncludeSurfaceBin value="0" /^> >>%PSA_1DB%\BinAvg.psa
 echo ^<SurfaceBinMinVal value="0.000000" /^> >>%PSA_1DB%\BinAvg.psa
@@ -1567,20 +1570,20 @@ REM #### END Trans.psa ####
 REM #### START WildEdit.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1DB%\WildEdit.psa
 echo ^<Wild_Edit ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<Version value="7.25.0.319" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<Version value="7.23.2" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^<ServerName value="Wild Edit" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<InputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<InputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1db" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1DB%\WildEdit.psa
-echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<ArrayItem index="0" value="ab1802_000.cnv" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^</InputFileArray^> >>%PSA_1DB%\WildEdit.psa
-echo ^<OutputDir value="J:\ab1705\sbe_ctd\1db\proc_data" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<OutputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1db" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^<NameAppend value="" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<OutputFile value="ab1802_000.cnv" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^<LastProcessed value="0" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^<StdDevPassOne value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^<StdDevPassTwo value="2.000000" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^<ScansPerBlock value="100" /^> >>%PSA_1DB%\WildEdit.psa
-echo ^<MinDelta value="0.005000" /^> >>%PSA_1DB%\WildEdit.psa
+echo ^<MinDelta value="0.003000" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1DB%\WildEdit.psa
 echo ^<CalcArray Size="13" ^> >>%PSA_1DB%\WildEdit.psa
 echo ^<CalcArrayItem index="0" CalcID="17" ^> >>%PSA_1DB%\WildEdit.psa
@@ -1679,22 +1682,21 @@ REM #### END WildEdit.psa ####
 REM #### COPY ABOVE THIS LINE ####
 
 
-
 REM # Generate 1hz files
 REM #### COPY BELOW THIS LINE ####
 
 REM #### START AlignCTD.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\AlignCTD.psa
 echo ^<Align_CTD ^> >>%PSA_1HZ%\AlignCTD.psa
-echo ^<Version value="7.25.0.319" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<Version value="7.23.2" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<ServerName value="Align CTD" /^> >>%PSA_1HZ%\AlignCTD.psa
-echo ^<InputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<InputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1hz" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\AlignCTD.psa
-echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ArrayItem index="0" value="ab1802_000.cnv" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^</InputFileArray^> >>%PSA_1HZ%\AlignCTD.psa
-echo ^<OutputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<OutputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1hz" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<NameAppend value="" /^> >>%PSA_1HZ%\AlignCTD.psa
-echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<OutputFile value="ab1802_000.cnv" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<CalcArray Size="12" ^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<CalcArrayItem index="0" CalcID="81" ^> >>%PSA_1HZ%\AlignCTD.psa
@@ -1769,10 +1771,10 @@ echo ^</CalcArray^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<ValArray size="12" ^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<ValArrayItem index="0" value="0.000000" variable_name="Temperature" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<ValArrayItem index="1" value="0.000000" variable_name="Temperature" /^> >>%PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="2" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="3" value="-0.040000" variable_name="Conductivity" /^> >>%PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="4" value="-0.040000" variable_name="Salinity, Practical" /^> >>%PSA_1HZ%\AlignCTD.psa
-echo ^<ValArrayItem index="5" value="-0.040000" variable_name="Salinity, Practical" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="2" value="0.000000" variable_name="Conductivity" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="3" value="0.000000" variable_name="Conductivity" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="4" value="0.000000" variable_name="Salinity, Practical" /^> >>%PSA_1HZ%\AlignCTD.psa
+echo ^<ValArrayItem index="5" value="0.000000" variable_name="Salinity, Practical" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<ValArrayItem index="6" value="0.000000" variable_name="Latitude" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<ValArrayItem index="7" value="0.000000" variable_name="Longitude" /^> >>%PSA_1HZ%\AlignCTD.psa
 echo ^<ValArrayItem index="8" value="1.073000" variable_name="Oxygen raw, SBE 43" /^> >>%PSA_1HZ%\AlignCTD.psa
@@ -1785,21 +1787,24 @@ REM #### END AlignCTD.psa ####
 REM #### START BinAvg.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\BinAvg.psa
 echo ^<Bin_Average ^> >>%PSA_1HZ%\BinAvg.psa
-echo ^<Version value="7.25.0.319" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<Version value="7.26.7.114" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<ServerName value="Bin Average" /^> >>%PSA_1HZ%\BinAvg.psa
-echo ^<InputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<InputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1hz" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\BinAvg.psa
-echo ^<ArrayItem index="0" value="ab1602_005.cnv" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<ArrayItem index="0" value="ab1802_012.cnv" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^</InputFileArray^> >>%PSA_1HZ%\BinAvg.psa
-echo ^<OutputDir value="Z:\Users\jhooper\Documents\Work_data\WBTS\ab1602\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<OutputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1hz" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<NameAppend value="" /^> >>%PSA_1HZ%\BinAvg.psa
-echo ^<OutputFile value="ab1602_005.cnv" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<OutputFile value="ab1802_012.cnv" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<BinType value="4" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<BinSize value="1.000000" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<IncludeNumberScans value="0" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<ScansToSkip value="0" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<ScansToOmit value="0" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<MinScansPerBin value="1" /^> >>%PSA_1HZ%\BinAvg.psa
+echo ^<MaxScansPerBin value="90" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<CastToProcess value="0" high="2" low="0" initialValue="0" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<IncludeSurfaceBin value="0" /^> >>%PSA_1HZ%\BinAvg.psa
 echo ^<SurfaceBinMinVal value="0.000000" /^> >>%PSA_1HZ%\BinAvg.psa
@@ -1982,35 +1987,35 @@ echo ^</PotentialTempAnomaly^> >>%PSA_1HZ%\DatCnv.psa
 echo ^</MiscellaneousDataForCalculations^> >>%PSA_1HZ%\DatCnv.psa
 echo ^</Data_Conversion^> >>%PSA_1HZ%\DatCnv.psa
 REM #### END DatCnv.psa ####
-REM #### START Derive1.psa ####
-echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\Derive1.psa
-echo ^<Derive ^> >>%PSA_1HZ%\Derive1.psa
-echo ^<Version value="7.16a" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^<ServerName value="Derive" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^<InstrumentPath value="C:\DATA\AB0804\ADCP\raw_data\AB0804_001_009.CON" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^<InstrumentMatch value="0" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^<InputDir value="C:\DATA\AB0804\ADCP\proc_data_pcor" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\Derive1.psa
-echo ^<ArrayItem index="0" value="ab0804_001.cnv" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^</InputFileArray^> >>%PSA_1HZ%\Derive1.psa
-echo ^<OutputDir value="C:\DATA\AB0804\ADCP\proc_data_pcor" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^<NameAppend value="" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^<OutputFile value="AB0804_001.cnv" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^<CalcArray Size="2" ^> >>%PSA_1HZ%\Derive1.psa
-echo ^<CalcArrayItem index="0" CalcID="70" ^> >>%PSA_1HZ%\Derive1.psa
-echo ^<Calc UnitID="49" Ordinal="0" ^> >>%PSA_1HZ%\Derive1.psa
-echo ^<FullName value="Salinity [PSU]" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^</Calc^> >>%PSA_1HZ%\Derive1.psa
-echo ^</CalcArrayItem^> >>%PSA_1HZ%\Derive1.psa
-echo ^<CalcArrayItem index="1" CalcID="70" ^> >>%PSA_1HZ%\Derive1.psa
-echo ^<Calc UnitID="49" Ordinal="1" ^> >>%PSA_1HZ%\Derive1.psa
-echo ^<FullName value="Salinity, 2 [PSU]" /^> >>%PSA_1HZ%\Derive1.psa
-echo ^</Calc^> >>%PSA_1HZ%\Derive1.psa
-echo ^</CalcArrayItem^> >>%PSA_1HZ%\Derive1.psa
-echo ^</CalcArray^> >>%PSA_1HZ%\Derive1.psa
-echo ^</Derive^> >>%PSA_1HZ%\Derive1.psa
-REM #### END Derive1.psa ####
+REM #### START Derive.psa ####
+echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\Derive.psa
+echo ^<Derive ^> >>%PSA_1HZ%\Derive.psa
+echo ^<Version value="7.16a" /^> >>%PSA_1HZ%\Derive.psa
+echo ^<ServerName value="Derive" /^> >>%PSA_1HZ%\Derive.psa
+echo ^<InstrumentPath value="C:\DATA\AB0804\ADCP\raw_data\AB0804_001_009.CON" /^> >>%PSA_1HZ%\Derive.psa
+echo ^<InstrumentMatch value="0" /^> >>%PSA_1HZ%\Derive.psa
+echo ^<InputDir value="C:\DATA\AB0804\ADCP\proc_data_pcor" /^> >>%PSA_1HZ%\Derive.psa
+echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\Derive.psa
+echo ^<ArrayItem index="0" value="ab0804_001.cnv" /^> >>%PSA_1HZ%\Derive.psa
+echo ^</InputFileArray^> >>%PSA_1HZ%\Derive.psa
+echo ^<OutputDir value="C:\DATA\AB0804\ADCP\proc_data_pcor" /^> >>%PSA_1HZ%\Derive.psa
+echo ^<NameAppend value="" /^> >>%PSA_1HZ%\Derive.psa
+echo ^<OutputFile value="AB0804_001.cnv" /^> >>%PSA_1HZ%\Derive.psa
+echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\Derive.psa
+echo ^<CalcArray Size="2" ^> >>%PSA_1HZ%\Derive.psa
+echo ^<CalcArrayItem index="0" CalcID="70" ^> >>%PSA_1HZ%\Derive.psa
+echo ^<Calc UnitID="49" Ordinal="0" ^> >>%PSA_1HZ%\Derive.psa
+echo ^<FullName value="Salinity [PSU]" /^> >>%PSA_1HZ%\Derive.psa
+echo ^</Calc^> >>%PSA_1HZ%\Derive.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Derive.psa
+echo ^<CalcArrayItem index="1" CalcID="70" ^> >>%PSA_1HZ%\Derive.psa
+echo ^<Calc UnitID="49" Ordinal="1" ^> >>%PSA_1HZ%\Derive.psa
+echo ^<FullName value="Salinity, 2 [PSU]" /^> >>%PSA_1HZ%\Derive.psa
+echo ^</Calc^> >>%PSA_1HZ%\Derive.psa
+echo ^</CalcArrayItem^> >>%PSA_1HZ%\Derive.psa
+echo ^</CalcArray^> >>%PSA_1HZ%\Derive.psa
+echo ^</Derive^> >>%PSA_1HZ%\Derive.psa
+REM #### END Derive.psa ####
 REM #### START Filter.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\Filter.psa
 echo ^<Filter ^> >>%PSA_1HZ%\Filter.psa
@@ -2204,21 +2209,21 @@ REM #### END Trans.psa ####
 REM #### START WildEdit.psa ####
 echo ^<?xml version="1.0" encoding="UTF-8"?^> >%PSA_1HZ%\WildEdit.psa
 echo ^<Wild_Edit ^> >>%PSA_1HZ%\WildEdit.psa
-echo ^<Version value="7.25.0.319" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<Version value="7.23.2" /^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<ServerName value="Wild Edit" /^> >>%PSA_1HZ%\WildEdit.psa
-echo ^<InputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<InputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1hz" /^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<InputFileArray size="1" GrowBy="-1" ^> >>%PSA_1HZ%\WildEdit.psa
-echo ^<ArrayItem index="0" value="ab1705_015.cnv" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ArrayItem index="0" value="ab1802_000.cnv" /^> >>%PSA_1HZ%\WildEdit.psa
 echo ^</InputFileArray^> >>%PSA_1HZ%\WildEdit.psa
-echo ^<OutputDir value="J:\ab1705\sbe_ctd\1hz\proc_data" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<OutputDir value="C:\Users\scs.user.rb\CTD\ab1802\proc_data\1hz" /^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<NameAppend value="" /^> >>%PSA_1HZ%\WildEdit.psa
-echo ^<OutputFile value="ab1705_015.cnv" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<OutputFile value="ab1802_000.cnv" /^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<LastProcessed value="0" /^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<StdDevPassOne value="2.000000" /^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<StdDevPassTwo value="2.000000" /^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<ScansPerBlock value="100" /^> >>%PSA_1HZ%\WildEdit.psa
-echo ^<MinDelta value="0.005000" /^> >>%PSA_1HZ%\WildEdit.psa
-echo ^<ExcludeMarkedBad value="0" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<MinDelta value="0.003000" /^> >>%PSA_1HZ%\WildEdit.psa
+echo ^<ExcludeMarkedBad value="1" /^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<CalcArray Size="13" ^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<CalcArrayItem index="0" CalcID="65" ^> >>%PSA_1HZ%\WildEdit.psa
 echo ^<Calc UnitID="3" Ordinal="0" ^> >>%PSA_1HZ%\WildEdit.psa
@@ -2313,6 +2318,7 @@ echo ^</Wild_Edit^> >>%PSA_1HZ%\WildEdit.psa
 REM #### END WildEdit.psa ####
 
 REM #### COPY ABOVE THIS LINE ####
+
 
 
 REM ###########################config.bat###################################
