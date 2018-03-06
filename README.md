@@ -14,17 +14,20 @@ Included are two scripts to initialize a ctd processing environment and a folder
 raw data files for station 004 of a Western Boundry Time Series(WBTS) cruise<br>
 carried out in May of 2017.<br>
 
-*  init_ctd_proc       A BASH script.<br>
-*  init_ctd_proc.bat   A BATCH script.<br>
+*  init_ctd_proc       A BASH script to process ctd data.
+*  init_ctd_proc.bat   A BATCH script to process ctd data.
+*  psa_1db_2nix        A BASH script that encodes 1db PSA files for inclusion in the process_ctd script.
+*  psa_1hz_2nix        A BASH script that encodes 1hz PSA files for inclusion in the process_ctd script.
+
 
 
 raw_data<br>
 
-*  AB1705_004.bl         Bottle trip file<br>
-*  AB1705_004.hdr        Header file<br>
-*  AB1705_004.hex        Raw hex data file<br>
-*  AB1705_004.mrk        Markscan file<br>
-*  AB1705_004.XMLCON     Configuration file<br>
+*  AB1705_004.bl         Bottle trip file
+*  AB1705_004.hdr        Header file
+*  AB1705_004.hex        Raw hex data file
+*  AB1705_004.mrk        Markscan file
+*  AB1705_004.XMLCON     Configuration file
 
 
 
