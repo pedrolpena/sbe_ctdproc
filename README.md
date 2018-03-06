@@ -68,6 +68,7 @@ You should see two files.<br>
 *  init_ctd_proc.bat
    
 On linux/OSX<br>
+
 Make the script executable. you should only have to do this once.<br>
 ```bash
 chmod +x ./init_ctd_proc
@@ -78,7 +79,8 @@ Copy and paste the following to initialize the environment<br>
 ```
 
 Response<br>
-```bash
+
+```
 This is now configured for basic CTD processing for cruise AB1705. Make sure wine is
 installed and that the SeaBird processing software is installed and running.
 This script assumes that wine is installed in the default prefix $HOME/.wine
@@ -101,22 +103,22 @@ to process station 004 type<br>
 ```
    
 The SBEBatch should run and deposit the processed files in<br>
+```   
+$HOME/data/ctd_proc/1db/proc_data
+AB1705_004.cnv
+AB1705_004.ros
+dAB1705_004.cnv
+uAB1705_004.cnv
    
-$HOME/ctd_proc/1db/proc_data<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.ros<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-dAB1705_004.cnv<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-uAB1705_004.cnv<br>
-   
-$HOME/ctd_proc/1hz/proc_data<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
-  
+$HOME/data/ctd_proc/1hz/proc_data
+AB1705_004.cnv
+```  
 On Windows<br>
 
 1) Open a terminal and navigate to the install scripts.<br>
 You should see two files.<br>
--init_ctd_proc<br>
--init_ctd_proc.bat<br>
+*  init_ctd_proc
+*  init_ctd_proc.bat
 
 ```winbatch
 init_ctd_proc AB1705 c:\users\Public\Documents\data
