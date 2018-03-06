@@ -64,13 +64,30 @@ In this example we'll prepare an environment to process CTD station 004 from cru
 
 1) Open a terminal and navigate to the install scripts.<br>
 You should see two files.<br>
--init_ctd_proc<br>
--init_ctd_proc.bat<br>
+*  init_ctd_proc
+*  init_ctd_proc.bat
    
 On linux/OSX<br>
+Make the script executable. you should only have to do this once.<br>
 ```bash
 chmod +x ./init_ctd_proc
+```
+Copy and paste the following to initialize the environment<br>
+```bash
 ./init_ctd_proc AB1705 $HOME/data
+```
+
+Response<br>
+```bash
+This is now configured for basic CTD processing for cruise AB1705. Make sure wine is
+installed and that the SeaBird processing software is installed and running.
+This script assumes that wine is installed in the default prefix $HOME/.wine
+and that SBEBatch.exe is installed in $HOME/.wine/drive_c/Program Files/Sea-Bird/SBEDataProcessing-Win32
+If they arn't, modify config.cfg and process_ctd with the correct paths.
+
+Place the raw CTD files in $HOME/data/ctd_proc/raw_data
+To process navigate to $HOME/data/ctd_proc/batch_files and type ./process_ctd nnn
+where nnn is the station number to process.
 ```
    
 This will install the processing script with it's configuration file and PSA files.<br>
