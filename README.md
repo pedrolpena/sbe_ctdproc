@@ -162,7 +162,7 @@ AB1705_004.ros
 dAB1705_004.cnv
 uAB1705_004.cnv
    
-c:\users\Public\Documents\ctd_proc\1hz\proc_data
+c:\users\Public\Documents\data\ctd_proc\1hz\proc_data
 AB1705_004.cnv
 ```
 
