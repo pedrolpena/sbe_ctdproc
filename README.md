@@ -93,8 +93,11 @@ where nnn is the station number to process.
 ```
    
 This will install the processing script with it's configuration file and PSA files.<br>
-Copy the included raw data files to $HOME/data/ctd_proc/raw_data and navigate to <br>
-   
+
+Copy the included raw data files to<br>
+$HOME/data/ctd_proc/raw_data<br>
+
+Navigate to <br>
 $HOME/ctd_proc/batch_files using the terminal.<br>
    
 to process station 004 type<br>
@@ -123,10 +126,27 @@ You should see two files.<br>
 ```winbatch
 init_ctd_proc AB1705 c:\users\Public\Documents\data
 ```
-This will install the processing script with it's configuration file and PSA files.<br>
-Copy the included raw data files to c:\users\Public\Documents\data\ctd_proc\raw_data and navigate to <br>
 
-c:\users\Public\Documents\ctd_proc\batch_files using the terminal.<br>
+Response<br>
+```
+This is now configured for basic CTD processing for cruise AB1705.
+Make sure the SeaBird processing software is installed and running.
+This script assumes that SBEBatch.exe is installed in either
+C:\Program Files (x86)\Sea-Bird\SBEDataProcessing-Win32
+or C:\Program Files\Sea-Bird\SBEDataProcessing-Win32.
+
+Place the raw CTD files in c:\users\Public\Documents\data\ctd_proc\raw_data
+To process navigate to c:\users\Public\Documents\data\ctd_proc\batch_files and type process_ctd nnn
+where nnn is the station number to process.
+```
+
+
+This will install the processing script with it's configuration file and PSA files.<br>
+Copy the included raw data files to<br> 
+c:\users\Public\Documents\data\ctd_proc\raw_data<br> 
+
+Using the terminal navigate to <br>
+c:\users\Public\Documents\ctd_proc\batch_files<br>
    
 to process station 004 type<br>
 
