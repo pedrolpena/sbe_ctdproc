@@ -20,10 +20,10 @@ carried out in May of 2017.<br>
 
 raw_data<br>
 
-*  ab1705_004.bl         Bottle trip file<br>
-*  ab1705_004.hdr        Header file<br>
-*  ab1705_004.hex        Raw hex data file<br>
-*  ab1705_004.mrk        Markscan file<br>
+*  AB1705_004.bl         Bottle trip file<br>
+*  AB1705_004.hdr        Header file<br>
+*  AB1705_004.hex        Raw hex data file<br>
+*  AB1705_004.mrk        Markscan file<br>
 *  AB1705_004.XMLCON     Configuration file<br>
 
 
