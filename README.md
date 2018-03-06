@@ -1,7 +1,11 @@
 # sbe_ctdproc
-A set of scripts to initialize directories and scripts to do some basic CTD processing using
-the SBE Data Processing programs on Windows OSX and linux.
-Use wine to install and run the SBE Data Processing software on *nix systems.
+A set of scripts to help initialize directories and scripts for basic CTD processing using<br>
+the SBE Data Processing programs on Windows, OSX and linux.<br>
+Use wine to install and run the SBE Data Processing software on *nix systems.<br>
+
+The batch script that "SBEBatch.exe" takes, "sbe_batch.dat" is embedded in the "process_ctd" script<br>
+and is created on the fly each time process_ctd is used.<br> This allows one to use the scripting 
+capabilities of the operating system to enhance the SBEBatch processing.<br> 
 
 
 Contents
