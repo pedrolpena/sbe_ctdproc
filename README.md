@@ -31,13 +31,16 @@ The SeaBird processing software installed in one of the default locations.<br>
 
 
 If using wine.<br>
-$HOME/.wine/drive_c/Program Files (x86)/Sea-Bird<br>
-$HOME/user/.wine/drive_c/Program Files/Sea-Bird<br>
+```bash
+$HOME/.wine/drive_c/Program Files (x86)/Sea-Bird
+$HOME/user/.wine/drive_c/Program Files/Sea-Bird
+```
 
 If using Windows<br>
-C:\Program Files (x86)\Sea-Bird<br>
-C:\Program Files\Sea-Bird<br>
-
+```windowsbatch
+C:\Program Files (x86)\Sea-Bird
+C:\Program Files\Sea-Bird
+```
 These scripts were written to process files that were created with the version of SeaSave that creates<br>
 configuration files with the XMLCON extension. I think SeaBird Began using the XMLCON file with version 7.<br>
 The scripts also require that the raw data files be created with the following file naming convention.<br>
