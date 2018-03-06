@@ -33,7 +33,7 @@ The SeaBird processing software installed in one of the default locations.<br>
 If using wine.<br>
 ```bash
 $HOME/.wine/drive_c/Program Files\ \(x86\)/Sea-Bird
-$HOME/user/.wine/drive_c/Program\ Files/Sea-Bird
+$HOME/.wine/drive_c/Program\ Files/Sea-Bird
 ```
 
 If using Windows<br>
