@@ -146,7 +146,7 @@ Copy the included raw data files to<br>
 c:\users\Public\Documents\data\ctd_proc\raw_data<br> 
 
 Using the terminal navigate to <br>
-c:\users\Public\Documents\ctd_proc\batch_files<br>
+c:\users\Public\Documents\data\ctd_proc\batch_files<br>
    
 to process station 004 type<br>
 
@@ -155,15 +155,16 @@ process_ctd 004
 ```
 
 The SBEBatch should run and deposit the processed files in<br>
+```   
+c:\users\Public\Documents\data\ctd_proc\1db\proc_data
+AB1705_004.cnv
+AB1705_004.ros
+dAB1705_004.cnv
+uAB1705_004.cnv
    
-c:\users\Public\Documents\ctd_proc\1db\proc_data<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.ros<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-dAB1705_004.cnv<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-uAB1705_004.cnv<br>
-   
-c:\users\Public\Documents\ctd_proc\1hz\proc_data<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-AB1705_004.cnv<br>
+c:\users\Public\Documents\ctd_proc\1hz\proc_data
+AB1705_004.cnv
+```
 
 Generating PSA files.
 =====================
