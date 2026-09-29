@@ -7,7 +7,8 @@ The batch script that "SBEBatch.exe" takes, "sbe_batch.dat" is embedded in the "
 and is created on the fly each time process_ctd is used.<br> This allows one to use the scripting 
 capabilities of the operating system to enhance the SBEBatch processing.<br>
 
-Disclaimer
+
+DISCLAIMER
 ==========
 This repository is a scientific product and is not official communication of the National Oceanic and
 Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project code is
