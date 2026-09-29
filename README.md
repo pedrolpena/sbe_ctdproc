@@ -21,7 +21,7 @@ DOC bureau, shall not be used in any manner to imply endorsement of any commerci
 DOC or the United States Government.
 
 
-Contents
+CONTENTS
 ========
 Included are two scripts to initialize a ctd processing environment and a folder with<br>
 raw data files for station 004 of a Western Boundry Time Series(WBTS) cruise<br>
